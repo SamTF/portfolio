@@ -18,9 +18,11 @@
             padding: 0
             margin: 0
 
+            // prevents all the hover effects from distracting the reader (except the nice background)
             &:hover
                 padding: 0
                 margin: 0
+                font-size: $body-size
 
 
 .summary-big
@@ -79,13 +81,16 @@
         color: $main-colour
         margin-bottom: 3ch
 
+    // link buttons
     a
         @extend %btn-dark
     
+    // bold
     strong
         color: $main-colour
         font-weight: 700
     
+    // bullet points
     li
         font-family: $body-font
         font-size: $body-size
@@ -98,6 +103,10 @@
     
         &:last-of-type
             margin-bottom: 3ch
+    
+    // source code monospace text
+    code
+        color: $main-colour
 
         
 

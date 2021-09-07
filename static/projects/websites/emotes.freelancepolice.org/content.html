@@ -1,0 +1,34 @@
+<!-- Image Showcase -->
+<div class="center">
+    <section class="showcase">
+        <div class="slides-small">
+            <a href="/static/projects/websites/emotes.freelancepolice.org/showcase/emotes_website.gif"><img src="/static/projects/websites/emotes.freelancepolice.org/showcase/emotes_website.webp" title="emotes.freelancepolice.org" loading="lazy"></a>
+            <a href="/static/projects/websites/emotes.freelancepolice.org/showcase/emotes_hover.gif"><img src="/static/projects/websites/emotes.freelancepolice.org/showcase/emotes_hover.webp" title="hovering over emotes" loading="lazy"></a>
+            <a href="/static/projects/websites/emotes.freelancepolice.org/thumb.webp"><img src="/static/projects/websites/emotes.freelancepolice.org/thumb.webp" title="emotes.freelancepolice.org" loading="lazy"></a>
+        </div>
+    </section>
+</div>
+
+<!-- Summary -->
+<section class="summary center" id="summary">
+    <div>
+        <h1>Summary</h1>
+        <p>This website displays all of Emote Dealer's emotes as an image gallery, updated dynamically every time an emote is added or removed.</p>
+        <a href="https://emotes.freelancepolice.org" target="_blank">Check out the emotes now!</a>
+    </div>
+</section>
+
+<!-- Creation Process -->
+<section class="creation center" id="creation">
+    <div>
+        <span class="full-text"><h1>Creation Process</h1></span>
+        <span class="short-text"><h1>Creation</h1></span>
+
+        <p><strong><a href="http://Emotes.freelancepolice.org">Emotes.freelancepolice.org</a></strong> displays the emote images that the Emote Dealer Discord bot has available to use. Check out that project page if you haven’t yet for better understanding of this project.</p>
+        <p>Emote Dealer solved a basic problem, but it also led to another one: too many emotes. We’d forget what emotes we actually had or what they’re called, so sometimes we’d just guess until we found the one we wanted. Initially, I added a <code>/emotes</code> command to Emote Salesman that would send a list of all emotes, but it didn’t look pleasing and it didn’t tell you what the emotes looked like. So I decided to make a website instead.</p>
+        <p>Like <a href="http://duke.freelancepolice.org">duke.freelancepolice.org</a>, this website uses an HTML template to dynamically populate a CSS Grid using jQuery. It does so by doing an AJAX call to the <code>images</code> sub-directory, and displaying every file ending in .gif, .png, or .jpg in that directory alongside its filename (which is also its Emote Dealer keyword to use on Discord). This images folder is always up to the day with the <code>emotes</code> directory because it’s actually just a symbolic link pointing to the emotes folder! In fact, if you open the <a href="http://emotes.freelancepolice.org/images/">emotes.freelancepolice.org/images/</a> URL you’ll see <code>emote_dealer.py</code> in there, the Emote Dealer Python script!</p>
+        <p>This website was made entirely by me. The gifs and images are property of their respective owners.</p>
+
+        <a href="https://github.com/SamTF/emotes_website" target="_blank">Check out the source code</a>
+    </div>
+</section>
