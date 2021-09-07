@@ -26,7 +26,7 @@ def home():
 
 ### Project page
 @app.route('/<category>/<project>')
-def micro_mike(category, project):
+def project_page(category, project):
     # Checks if the category exists - if not instantly throws a 404 error
     if category not in PROJECTS.list.keys():
         return f'<center><code><h1>Error 404: directory <em>{category}</em> not found</h1></code></center>'

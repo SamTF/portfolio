@@ -1,0 +1,38 @@
+<!-- Image Showcase -->
+<div class="center">
+    <section class="showcase">
+        <div class="slides-small">
+            <a href="/static/projects/websites/duke.freelancepolice.org/showcase/duke_demo.gif"><img src="/static/projects/websites/duke.freelancepolice.org/showcase/duke_demo.webp" title="Duke's Emporium Demo" loading="lazy"></a>
+            <a href="/static/projects/websites/duke.freelancepolice.org/showcase/1.jpg"><img src="/static/projects/websites/duke.freelancepolice.org/showcase/1.webp" title="Shop UI with Gun preview" loading="lazy"></a>
+            <a href="/static/projects/websites/duke.freelancepolice.org/showcase/2.jpg"><img src="/static/projects/websites/duke.freelancepolice.org/showcase/2.webp" title="Shop UI with Item preview" loading="lazy"></a>
+            <a href="/static/projects/websites/duke.freelancepolice.org/showcase/3.jpg"><img src="/static/projects/websites/duke.freelancepolice.org/showcase/3.webp" title="Item description" loading="lazy"></a>
+            <a href="/static/projects/websites/duke.freelancepolice.org/showcase/4.jpg"><img src="/static/projects/websites/duke.freelancepolice.org/showcase/4.webp" title="Gun stats" loading="lazy"></a>
+        </div>
+    </section>
+</div>
+
+<!-- Summary -->
+<section class="summary center" id="summary">
+    <div>
+        <h1>Summary</h1>
+        <p><strong>The Duke's Emporium</strong> is an accurate recreation of the Shop UI from the game Resident Evil Village. It was made as a CSS and JS/JQuery learning project.</p>
+        <a href="duke.freelancepolice.org" target="_blank">Shop at the Emporium now!</a>
+    </div>
+</section>
+
+<!-- Creation Process -->
+<section class="creation center" id="creation">
+    <div>
+        <span class="full-text"><h1>Creation Process</h1></span>
+        <span class="short-text"><h1>Creation</h1></span>
+
+        <p>I made Duke’s Emporium because I wanted to get more practice with CSS, especially with CSS Grid and responsive layouts. I had been playing through RE: Village at the time and I love the Duke character, so that’s why I decided on recreating his UI.</p>
+        <p>I started by taking a screenshot of the in-game UI, and the sectioning it off into each main area, then sub-area, then sub-sub areas ( etc…), and writing down all their margins and sizes are percentages. Then I set about recreating that layout on a blank HTML page using CSS Grid. Every single element on that page is divided into grids and sub-grids, all the way down. Even the page margins are grids. Check out the image showcase above to see what my layout breadown looks like.</p>
+        <p>Having done the layout, I then had to style the image and text elements, giving them appropriate fonts and responsive sizes. The website is basically completely responsive in 16:9 ratios from 720p and higher. Anything else and it breaks because that’s what the in-game UI was designed around. Getting the images used in the website was actually really gurelling, because I had to painstakingly go the home and take a screenshot of every item possible in the store, and then photoshop it out.</p>
+        <p>I also used this opportunity to learn how to use <strong>jQuery</strong> and display content dynamically. In the static HTML file, there are no item cards inside the shop, but there is a <code>&lt;template&gt;</code> tag that contains all the elements required for the item (its icon, name, price, and whether it’s sold out). JQuery then loads an <code>items.json</code> that contains every item in the store along with its relevant info, and populates the shop with instances of the item template for each item in the file.</p>
+        <p>You’ll also notice that when you hover over any item icon in the shop, you get a full-sized 3D render of what that specific item looks like in-game. Not only that, but it also displays the item and description on the info box at the bottom of the shop page, as well as displaying item stats if the item is a weapon. This data is also from that json file.</p>
+        <p>All HTML, CSS, and Javascript was done by me. The shop design, images, and other intellectual property are owned by CAPCOM.</p>
+
+        <a href="https://www.residentevil.com/village/us/" target="_blank">Check out Resident Evil Village</a>
+    </div>
+</section>
