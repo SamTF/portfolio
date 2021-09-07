@@ -1,0 +1,39 @@
+<!-- Image Showcase -->
+<div class="center">
+    <section class="showcase">
+        <div class="slides-small">
+            <a href="/static/projects/discord_bots/emotes/showcase/emotes_demo.gif">        <img src="/static/projects/discord_bots/emotes/showcase/emotes_demo.webp" alt="emotes demo" loading="lazy"></a>
+            <a href="/static/projects/discord_bots/emotes/showcase/emote_salesman_demo.gif"><img src="/static/projects/discord_bots/emotes/showcase/emote_salesman_demo.webp" alt="emote salesman demo" loading="lazy"></a>
+            <a href="/static/projects/discord_bots/emotes/showcase/emotes_website.jpg">     <img src="/static/projects/discord_bots/emotes/showcase/emotes_websites.webp" alt="emote.freelancepolice.org" loading="lazy"></a>
+            <a href="/static/projects/discord_bots/emotes/showcase/dunno.jpg">              <img src="/static/projects/discord_bots/emotes/showcase/dunno.webp" alt="dunno" loading="lazy"></a>
+            <a href="/static/projects/discord_bots/emotes/showcase/joeysmile_add.jpg">      <img src="/static/projects/discord_bots/emotes/showcase/joeysmile_add.webp" alt="joeysmile_add" loading="lazy"></a>
+            <a href="/static/projects/discord_bots/emotes/showcase/joeysmile.jpg">          <img src="/static/projects/discord_bots/emotes/showcase/joeysmile.webp" alt="joeysmile" loading="lazy"></a>
+            <a href="/static/projects/discord_bots/emotes/showcase/nick.jpg">               <img src="/static/projects/discord_bots/emotes/showcase/nick.webp" alt="nick" loading="lazy"></a>
+        </div>
+    </section>
+</div>
+
+<!-- Summary -->
+<section class="summary center" id="summary">
+    <div>
+        <h1>Summary</h1>
+        <p><strong>Emote Dealer</strong> is a Discord bot that deals out any reaction image or gif that users have added to the emote list when its name is invoked, and his partner, <strong>Emote Salesman</strong>, handles adding new emotes No need for buying discord nitro now for extra emotes or stickers! Wowie!</p>
+        <a href="https://discord.com/api/oauth2/authorize?client_id=565279368327200823&permissions=379904&scope=bot" target="_blank">Invite the bot!</a>
+    </div>
+</section>
+
+<!-- Creation Process -->
+<section class="creation center" id="creation">
+    <div>
+        <span class="full-text"><h1>Creation Process</h1></span>
+        <span class="short-text"><h1>Creation</h1></span>
+
+        <p><strong>Emote Dealer</strong> is one of the very first bots I ever made (around 2019), because it solved a very simple but consistent problem in our server: we wanted to use our own reaction images but without having to manually use the Discord “upload image” option every time or worse… having to buy Discord Nitro. So I created a bot that automatically uploads any emote image or gif we’ve added whenever you send its name as a message.</p>
+        <p>It’s also the simplest bot that is still active on our server. It works by listening to every single message sent to any text channel, and then checking if the message is only a single word. The single word condition was made so that Emote Dealer wouldn’t accidentally send an emote when we were just typing a normal message. Every emote is saved on disk (currently in an Azure server, formerly Google Cloud, and back in the day it was on my own hard drive). Then Emote Dealer scans that directory for any PNG/JPG/GIF image that matches the single-word sent. If there’s a match, the image is instantly uploaded. Otherwise, nothing happens.</p>
+        <p>Everyone loves Emote Dealer; but there was a second problem that needed solving: how do we add more emote images? At first, I would manually download any image we wanted to the emote directory on my PC, but this soon became tedious and untenable when I moved my bots to a Linux Cloud server. Enter… <strong>Emote Salesman!</strong></p>
+        <p>Since Emote Dealer is already listening to every message, it’s not possible to add text based commands to him - besides, I wanted the code to keep its beautiful simplicity. Thus, I decided to offload the task of adding, removing, and renaming emotes to a second bot. Emote Salesman’s "add" command fixed the problem of adding emotes. It requires an emote name (single word, special characters possible) and image URL ending in .PNG, .JPG, or .GIF. Having those two, it simply downloads the requested image file with the specified name to the emote directory. And it’s good to go!</p>
+        <p>Both of these bots have super simple code that provide invaluable service to my Discord server, without ever needing to be restarted or edited, no matter how many emotes we add or remove. <strong>It just works!</strong></p>
+
+        <a href="https://github.com/SamTF/emotes" target="_blank">Check them out on Github</a>
+    </div>
+</section>

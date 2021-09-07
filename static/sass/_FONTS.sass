@@ -1,0 +1,27 @@
+// FONT IMPORTS
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap')
+@import 'queries'
+
+// FONT SIZE
+$h1-size: 5.5rem //88px
+$h2-size: 4.5rem //72px
+$subtitle-size: 1.75rem //1.25rem //20px
+$body-size: 0.9rem //15px
+
+// FONT WEIGHT
+$heading-weight: 500
+
+$heading-font: 'Oswald', Impact, sans-serif
+$body-font: 'Raleway', Tahoma, sans-serif
+
+
+html
+    font-size: 1vh
+
+    @include screen-max(1920px)
+        font-size: 1.175vh
+
+    @include screen-max(940px)
+        // font-size: 1.5vh
+        $body-size: 1.25rem !global

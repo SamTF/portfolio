@@ -1,0 +1,60 @@
+<!-- Image Showcase -->
+<div class="center">
+    <section class="showcase">
+        <div class="slides-small">
+            <a href="/static/projects/discord_bots/currencything/showcase/genesis.jpg">                 <img src="/static/projects/discord_bots/currencything/showcase/genesis.webp" title="Genesis block" loading="lazy"></a>
+            <a href="/static/projects/discord_bots/currencything/showcase/user_trades.jpg">             <img src="/static/projects/discord_bots/currencything/showcase/user_trades.webp" title="Users executing transactions" loading="lazy"></a>
+            <a href="/static/projects/discord_bots/currencything/showcase/blockchain_user_trades.jpg">  <img src="/static/projects/discord_bots/currencything/showcase/blockchain_user_trades.webp" title="User transactions on the blockchain" loading="lazy"></a>
+            <a href="/static/projects/discord_bots/currencything/showcase/user_balance.jpg">            <img src="/static/projects/discord_bots/currencything/showcase/user_balance.webp" title="The currency thing balance of each user" loading="lazy"></a>
+            <a href="/static/projects/discord_bots/currencything/showcase/milestones.jpg">              <img src="/static/projects/discord_bots/currencything/showcase/milestones.webp" title="Who mined each thousandth currency thing" loading="lazy"></a>
+            <a href="/static/projects/discord_bots/currencything/showcase/big_blockchain.jpg">          <img src="/static/projects/discord_bots/currencything/showcase/big_blockchain.webp" title="Big example of the blockchain" loading="lazy"></a>
+
+        </div>
+    </section>
+    </div>
+
+<!-- Summary -->
+<section class="summary center" id="summary">
+    <div>
+        <h1>Summary</h1>
+        <p><strong>Currency Thing</strong> is a cryptocurrency backed by Discord messages, following the same principles of proof-of-work as Bitcoin. The blockchain is stored as a chain of messages on the <code>#blockchain</code> text channel. Each message sent on the server creates a new currency thing that is awarded to the user who mines it first. Users can freely send currency things to any server member and check their balance.</p>
+        <a href="https://currencything.com/" target="_blank">View the Blockchain online!</a>
+    </div>
+</section>
+
+<!-- Creation Process -->
+<section class="creation center" id="creation">
+    <div>
+        <span class="full-text"><h1>Creation Process</h1></span>
+        <span class="short-text"><h1>Creation</h1></span>
+
+        <p><strong>Currency Thing</strong> was born through my desire to understand cryptocurrencies better in 2021. I wasn’t satisified with analogies, simplified explanations, or vague promises. I wanted to know <strong>exactly</strong> how it worked and how it was thought up, <em>and what better way to find that out than to make your own crypto?</em></p>
+        <p>Both for my sanity’s sake, and for the sake of creating another fun feature unique to my Discord server, I decided to make my cryptocurrency run on Discord. After doing a lot of research on how Bitcoin’s blockchain really works and reading the <a href="https://bitcoin.org/bitcoin.pdf">white paper</a>, I started by writing my own white paper that went like this:</p>
+        <ul>
+            <li>Currency Thing would be backed by server messages. Each message creates a new currency thing;</li>
+            <li>Every online server member is eligible to mine the message;</li>
+            <li>The mine reward goes to the user whose hashed Discord ID matches the hash of the message<strong>*</strong>;</li>
+            <li>The reward would be sent out by the Currency Thing bot himself, who is the only user that can therefore have a negative currency thing balance, and can never receive currency things from other users;</li>
+            <li>The blockchain is stored as a chain of messages on its own text channel: #blockchain;</li>
+            <li>Transaction messages are formatted as: <code>[TX Num, @Sender, Size, @Receiver, Prev TX Hash]</code>
+                <br><br>
+                <ul>
+                <li>TX Num - counts how many transactions have been made</li>
+                <li>@Sender - Discord mention of the user sending currency thing</li>
+                <li>Size - amount of currency things they’re sending</li>
+                <li>@Receiver - Discord mention of the user being sent the currency thing</li>
+                <li>Prev TX Hash - hashes the content of the previous transaction, and converts it into a server emote</li>
+                </ul>
+            </li>
+        </ul>
+        <p><strong>TX Num</strong> and <strong>Prev TX Hash</strong> ensure that nobody can just delete transaction messages, as it would be obviouslt that they’re out of order, and Discord already disallows even admins from editing other people’s messages, so the Blockchain is very secure</p>
+        <p><strong>*The Mining Process</strong>:<br>
+        The message hash is created by forming an array containg the message content, author’s username, and UNIX timestamp of when the message was sent. Then the Currency Thing bot hashes that array using the <a href="https://www.blake2.net/">BLAKE2</a> cryptographic hash function. This should ensure that no two messages will ever have the same 256bit hash.</p>
+        <p>To determine the winner of the currency thing created by the message, Currency Thing then combines the generated Blake hash with a random bytestring key, until the first 6 digits of the combined hash match the first 6 digits of an online server member’s hashed Discord ID. IDs are unique to each user and cannot ever be changed. Six digits was, after plenty of testing, a good compromise between no hash collision and fast mining speed.</p>
+        <p>Example mining transaction: <code>0 @Currency Thing 1 @Sam 0</code> - the first transaction ever!<br>
+        Example user transaction:      <code>392 @Sam 444 @Max :gregg:</code> - I lost a bet against Max</p>
+        <p>Every script was made using Python. The discord features were made with <a href="https://pypi.org/project/discord.py/">discord.py</a>. In memory, the blockchain is stored and manipulated as a <a href="https://pandas.pydata.org/">Pandas</a> DataFrame. The hashing algorithm is BLAKE2 from Python’s <a href="https://docs.python.org/3/library/hashlib.html">hashlib</a> module. The logo was made in Illustrator, and both it and the name were inspired by <a href="https://www.youtube.com/watch?v=kKFjm4gMy5g">this</a>. Every thing was made by me.</p>
+
+        <a href="https://github.com/SamTF/CurrencyThing" target="_blank">Check out the code on Github</a>
+    </div>
+</section>

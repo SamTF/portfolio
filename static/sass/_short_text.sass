@@ -1,0 +1,19 @@
+// This style replaces the normal full text with shorten text for smaller mobile screens
+// by having a span with the full content and a span with the shortened content
+
+    
+.full-text
+    // Shows the full text by default
+    display: inline-block
+
+    // Hides the full text on small mobile sizes
+    @include screen-max(576px)
+        display: none
+
+.short-text
+    // Hides the shortened text by default
+    display: none
+
+    // Hides the full text on small mobile sizes
+    @include screen-max(576px)
+        display: inline-block

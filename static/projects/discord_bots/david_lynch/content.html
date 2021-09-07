@@ -1,0 +1,38 @@
+<!-- Image Showcase -->
+<div class="center">
+<section class="showcase">
+    <div class="slides-small">
+        <a href="/static/projects/discord_bots/david_lynch/showcase/weather_report_demo.gif"><img src="/static/projects/discord_bots/david_lynch/showcase/weather_report_demo.webp" alt="slide1" loading="lazy"></a>
+        <a href="/static/projects/discord_bots/david_lynch/showcase/weather.jpg">            <img src="/static/projects/discord_bots/david_lynch/showcase/weather.webp"             alt="weather" loading="lazy"></a>
+        <a href="/static/projects/discord_bots/david_lynch/showcase/forecast.jpg">           <img src="/static/projects/discord_bots/david_lynch/showcase/forecast.webp"            alt="forecast" loading="lazy"></a>
+        <a href="/static/projects/discord_bots/david_lynch/showcase/weather_concept_1.png">  <img src="/static/projects/discord_bots/david_lynch/showcase/weather_concept_1.webp"   alt="weather concept #1" loading="lazy"></a>
+        <a href="/static/projects/discord_bots/david_lynch/showcase/weather_concept_2.png">  <img src="/static/projects/discord_bots/david_lynch/showcase/weather_concept_2.webp"   alt="weather concept #2" loading="lazy"></a>
+        <a href="/static/projects/discord_bots/david_lynch/showcase/weather_concept_3.png">  <img src="/static/projects/discord_bots/david_lynch/showcase/weather_concept_3.webp"   alt="weather concept #3" loading="lazy"></a>
+        <a href="/static/projects/discord_bots/david_lynch/showcase/forecast_concepts.png">  <img src="/static/projects/discord_bots/david_lynch/showcase/forecast_concepts.webp"   alt="forecast concept #1" loading="lazy"></a>
+        <a href="/static/projects/discord_bots/david_lynch/showcase/forecast_concepts_2.png"><img src="/static/projects/discord_bots/david_lynch/showcase/forecast_concepts_2.webp" alt="forecast concept #2" loading="lazy"></a>
+    </div>
+</section>
+</div>
+
+<!-- Summary -->
+<section class="summary center" id="summary">
+    <div>
+        <h1>Summary</h1>
+        <p>Weather Report hosted by David Lynch! Featuring cool icons I made. It was inspired by David Lynch's weather report youtube channel. This is a discord bot that gives you pretty images detailing the current and forecasted weather conditions of any requested city.</p>
+        <a href="https://discord.com/api/oauth2/authorize?client_id=874382861162131536&permissions=2147796992&scope=applications.commands%20bot" target="_blank">Invite the bot!</a>
+    </div>
+</section>
+
+<!-- Creation Process -->
+<section class="creation center" id="creation">
+    <div>
+        <span class="full-text"><h1>Creation Process</h1></span>
+        <span class="short-text"><h1>Creation</h1></span>
+        <p>Having finished the Currency Thing discord cryptocurrency, I wanted to keep the bot rolling and start another big bot project, but I wasn’t sure what to make next. I asked my friends what they’d like to see, and they mentioned that a weather bot would be useful. <a href="https://www.youtube.com/c/DAVIDLYNCHTHEATER">David Lynch’s Weather Report</a> on youtube came to mind, and instantly everything clicked.</p>
+        <p>I started out by finding an API from which to get the data. I found <a href="https://wttr.in/">wttr.in</a>, and originally I just CURLed that website directly since it displayed all the data and had a cool ASCII graphic. That was done very fast and easily, but I knew I wanted more from this bot.</p>
+        <p>I wasn’t happy with the ASCII graphics and so I wanted to create my own pretty weather card instead. I had experience doing image manipulation in Python from the Stockman bot, and I hadn’t used Illustrator in a while, so that’s what I started working on. I began by looking at the WWO weather condition codes and making a simple and fun icon for each general condition (sunny, cloudy, raining, foggy), then combinbing or expanding them to create the more specific conditions (partly cloudy, heavy rain, thundery rain).</p>
+        <p>Having done the icons, I brainstormed a bunch of concepts for current weather reports, 1-day forecasts, and weekly forecasts. It took a few tries to figure out what I wanted, and you can look at all the concepts in the showcase above. The final thing to do was creating the Python script to load the correct icons and lay out the images like I designed them using <a href="https://pypi.org/project/Pillow/">Pillow</a>, based on the API data fetched from <a href="http://WeatherAPI.com">WeatherAPI.com</a>.</p>
+        <p>All the icons, design, and programming were done by me.</p>
+        <a href="https://github.com/SamTF/weather_report" target="_blank">Check out the Github</a>
+    </div>
+</section>

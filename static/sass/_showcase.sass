@@ -1,0 +1,70 @@
+.showcase
+    // margin: auto
+    width: 90%
+    text-align: center
+    overflow: hidden
+
+    margin: 4rem
+
+    .slides
+        display: flex
+        gap: 25px
+        // justify-content: center
+        // flex-wrap: wrap
+
+        overflow-x: auto
+        overflow-y: hidden
+        // scroll-snap-type: x mandatory
+        // scroll-behavior: smooth
+
+        // max-height: 400px
+
+        .showcase-item
+            scroll-snap-align: start
+            position: relative
+            overflow: visible
+
+            img
+                object-fit: cover
+                height: 29vh
+              
+            &::after
+              // Display
+              display: grid
+              place-items: center
+              pointer-events:none
+
+              // Content
+              content: attr(data-desc)
+              text-transform: capitalize
+              
+              // Position
+              position: absolute
+              left: 0
+              right: 0
+              bottom: 0
+
+              // Design
+              background-color: rgba(0, 0, 0, 0.7)
+              height: 100%
+              width: 105%
+
+              // Font 
+              font-family: $body-font
+              font-size: $body-size
+
+              // Animation
+              transform: scale(0)
+
+            
+            &:hover::after
+              transform: scale(1)
+
+
+// Making the slides responsively smaller for the screenshot showcases on project pages
+.slides-small
+    @extend .slides
+
+    img
+        max-height: 25vh
+              

@@ -1,0 +1,12 @@
+{% extends "_layout.html" %}
+
+{% block header %}
+    {% include '_project_header.html' %}
+{% endblock header %}
+
+{% block body %}
+    <img src="{{ banner }}" class="banner" title="{{ banner }}" alt="{{ banner }}">
+
+    {{ content }}
+
+{% endblock body %}

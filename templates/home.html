@@ -1,0 +1,38 @@
+{% extends "_layout.html" %}
+
+{% block header %}
+    {% include '_main_header.html' %}
+{% endblock header %}
+
+{% block body %}
+    <section class="summary-big center">
+        <span class="full-text"><h1>a selection of things i've made</h1></span>
+        <span class="short-text"><h1>things i've made</h1></span>
+        <p>From levels to complete video games; from blues guitar songs to chiptune tracks; from discord bots to full-stack websites; and even a noir thriller novel...</p>
+        <p>Here's a cross-section of some projects I've made.</p>
+    </section>
+
+    {% for category, project_list in projects.items() %}
+        <!-- Category Section -->
+        <section id="video-games" class="center">
+
+            <!-- Section Header -->
+            <div class="section-header">
+                <h2>{{category}}</h2>
+            </div>
+
+            <!-- Horizontal slider with the projects -->
+            <div class="showcase">
+                <div class="slides">
+                    {% for project in project_list %}
+                        <a href="{{ project.URL }}"><div class="showcase-item" data-desc="{{ project.description }}">
+                            <img src="{{ project.thumb }}" alt={{ project.name }} loading="lazy">
+                        </div></a>
+                    {% endfor %}
+                    
+                </div>
+            </div>
+
+    </section>
+    {% endfor %}
+{% endblock body %}

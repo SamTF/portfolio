@@ -1,0 +1,26 @@
+{% extends "_layout.html" %}
+
+
+{% block body %}
+    <img src="/static/images/banner.webp" class="banner">
+
+    <section id="video">
+    <div class="video-container center">
+        <iframe src="https://www.youtube-nocookie.com/embed/umsTKg9V_aI?vq=hd1080&showinfo=0&rel=0" width="940" height="528" frameborder="0" allowfullscreen></iframe>
+    </div>
+    </section>
+
+    <section class="summary center" id="summary">
+        <div>
+            <h1>Summary</h1>
+            {{ summary }}
+        </div>
+    </section>
+
+    <section class="creation center" id="creation">
+        <div>
+            <h1>Creation Process</h1>
+            {{ creation }}
+        </div>
+    </section>
+{% endblock body %}

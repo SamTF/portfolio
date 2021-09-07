@@ -1,0 +1,39 @@
+<!-- Image Showcase -->
+<div class="center">
+    <section class="showcase">
+        <div class="slides-small">
+            <a href="/static/projects/discord_bots/stockman/showcase/stockman_demo.gif">    <img src="/static/projects/discord_bots/stockman/showcase/stockman_demo.webp" alt="stockman demo" loading="lazy"></a>
+            <a href="/static/projects/discord_bots/stockman/showcase/crypto.jpg">           <img src="/static/projects/discord_bots/stockman/showcase/crypto.webp" alt="crypto" loading="lazy"></a>
+            <a href="/static/projects/discord_bots/stockman/showcase/aapl.jpg">             <img src="/static/projects/discord_bots/stockman/showcase/aapl.webp" alt="AAPL" loading="lazy"></a>
+            <a href="/static/projects/discord_bots/stockman/showcase/status.jpg">           <img src="/static/projects/discord_bots/stockman/showcase/status.webp" alt="live ticker status" loading="lazy"></a>
+            <a href="/static/projects/discord_bots/stockman/showcase/pnl.jpg">              <img src="/static/projects/discord_bots/stockman/showcase/pnl.webp" alt="pnl" loading="lazy"></a>
+            <a href="/static/projects/discord_bots/stockman/showcase/networth.jpg">         <img src="/static/projects/discord_bots/stockman/showcase/networth.webp" alt="networth" loading="lazy"></a>
+            <a href="/static/projects/discord_bots/stockman/showcase/networth_delta.jpg">   <img src="/static/projects/discord_bots/stockman/showcase/networth_delta.webp" alt="networth" loading="lazy"></a>
+        </div>
+    </section>
+</div>
+
+<!-- Summary -->
+<section class="summary center" id="summary">
+    <div>
+        <h1>Summary</h1>
+        <p><strong>Stockman</strong> is a Discord bot that tracks my investment portfolio in real-time, and graphs/visualises its daily and total performance in multiple formats. Stockman can also display the performance of any stock over a given time period. Additionally, it also displays a live ticker of a certain stock as its Discord status updated every minute 💎🙌</p>
+        <a href="https://www.gmedd.com/" target="_blank">Buy $GME</a>
+    </div>
+</section>
+
+<!-- Creation Process -->
+<section class="creation center" id="creation">
+    <div>
+        <span class="full-text"><h1>Creation Process</h1></span>
+        <span class="short-text"><h1>Creation</h1></span>
+
+        <p>I started an investment portfolio for the first time in 2021, like I’m sure many others did. It’s a fun and chaotic world where data is king. I have my portfolio spread across many different brokers, and I did not want to log in to every single one of them every day just to see how my portfolio was doing. I wanted a centralised location where I could see how everything was doing, without relying on any third-parties . Thus, the idea for <strong>Stockman</strong> was born.</p>
+        <p>At its core, Stockman tracks the performance of my portfolio by graphing networth, amount of money invested, networth delta change over time; and a daily profit/loss card. It generates my portfolio by looking through a .CSV file hosted on Google Sheets that contains every single transaction I’ve ever made. With this data, in conjunction with Yahoo Finance and Pandas, it creates a snapshot of exactly what I had in my portfolio at every moment in time ever since I opened my account. Then, with yfinance, Stockman gets the value of each individual asset position on each day, as well as the % change from the previous day, and then also calculates the overall value of my portfolio and it’s % change per day.</p>
+        <p>This is an amazing approach because it can react to changes in my portfolio in real-time. All I have to do is enter the new transactions, buy or sell, into the Google Sheet spreadsheet, and Stockman automatically gets all the relevant data.</p>
+        <p>Beyond just tracking my portfolio, I also gave it the ability to graph any asset that can be found on Yahoo Finance over a certain period of time: daily, weekly, monthly, 6 months, or year-to-date. After that, I also thought it would be cool to have Stockman display the price of an asset as its Discord status, alongside an up-arrow/down-arrow indicator, which is updated every minute.</p>
+        <p>There’s a grand total of <strong>10 seperate Python scripts</strong> working together to achieve all this. It may not look like it, but this bot is more complex and has more moving parts than my cryptocurrency bot Currency Thing.</p>
+        <p>Everything was made in Python by me. Stock data is fetched using the <a href="https://pypi.org/project/yfinance/">yfinance</a> library, the data processing is done with the mighty <a href="https://pandas.pydata.org/">Pandas</a>, graphs are charted with <a href="https://matplotlib.org/">Matplotlib</a>, and images are generated with <a href="https://pypi.org/project/Pillow/">Pillow</a>.</p>
+        <p><em>Due to the sensitive nature of this topic, I’m <strong>not</strong> going to be providing links to the source code, and all screenshots you’ll see are from a <strong>fictional portfolio</strong> created just to demo Stockman on this website.</p></em>
+    </div>
+</section>

@@ -1,0 +1,79 @@
+/////// IMPORTS
+// Variables
+@import 'FONTS'
+@import 'COLOURS'
+// Mixins
+@import 'queries'
+// Styles
+@import 'header'
+@import 'headings'
+@import 'summary'
+@import 'showcase'
+@import 'video_embeds'
+@import 'btn'
+// Utilities
+@import 'short_text'
+
+$padding-vertical: 3vh 0vh
+$padding-mobile: 1.5vh 0vh
+    
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+    color: $text-colour
+
+
+body
+    background-color: $main-colour
+    color: $main-colour
+    overflow-x: hidden
+
+
+// The header card for each category of projects
+.section-header
+    background-color: $accent-colour
+    padding: $padding-vertical//100px 0px
+    text-align: center
+    width: 100%
+
+    // Reduce the title size if on mobile
+    @include screen-max(940px)
+        padding: $padding-mobile
+
+        h2
+            font-size: $h2-size - 1rem
+        
+
+//  General utility to center divs
+.center
+    display: grid
+    place-items: center
+
+// Utility class to override the background colour and make it the main colour (black)
+.main-colour
+    background-color: $main-colour !important
+
+
+// The banner on a project page
+.banner
+    object-fit: cover
+    width: 100%
+    min-height: 100px
+    background-color: white
+
+.blue
+    background-color: #ffffff70
+
+
+// Nice scrollbar on chrome
+::-webkit-scrollbar
+    width: 10px
+    height: 10px
+
+::-webkit-scrollbar-thumb
+    background: $accent-colour
+    border-radius: 10px
+
+::-webkit-scrollbar-track
+    background: transparent

@@ -1,0 +1,104 @@
+// The text content of the project pages
+
+%summary
+    // general elements of the sumary box
+    background-color: $main-color-lighter
+    padding: 5vh 0vh //100px 0px
+
+    // body text common elements
+    p
+        color: $text-colour
+        font-family: $body-font
+        line-height: 1.67em
+
+        // Links within body text - not buttons
+        a
+            text-decoration: none
+            background-color: transparent
+            padding: 0
+            margin: 0
+
+            &:hover
+                padding: 0
+                margin: 0
+
+
+.summary-big
+    @extend %summary
+
+    text-align: center
+
+    p
+        font-size: $subtitle-size
+        width: clamp(45ch, 60vw, 70ch)
+    
+
+    // Reduce font sizes on mobile
+    @include screen-max(940px)
+        h1
+            font-size: $h2-size
+        
+        p
+            font-size: $body-size   
+
+
+.summary
+    @extend %summary
+
+    h1
+        font-size: $h2-size
+        text-align: left
+        margin-bottom: 0.3em
+
+    p
+        font-size: $body-size
+        // width: 72ch
+        width: clamp(45ch, 75vw, 80ch)
+        text-align: justify
+    
+        // Extra margin at the end of the last paragraph
+        &:last-of-type
+            margin-bottom: 7ch
+    
+    a
+        @extend %btn
+
+
+.creation
+    @extend .summary
+    background-color: $accent-colour
+
+    h1
+        color: $main-colour
+        margin-bottom: 0.4em
+
+        // @include screen-max(576px)
+        //     font-size: $h2-size - 1.2rem
+    
+    p
+        color: $main-colour
+        margin-bottom: 3ch
+
+    a
+        @extend %btn-dark
+    
+    strong
+        color: $main-colour
+        font-weight: 700
+    
+    li
+        font-family: $body-font
+        font-size: $body-size
+        color: $main-colour
+        text-align: justify
+
+        margin-left: 5ch
+        margin-bottom: 1ch
+        width: clamp(35ch, 50vw, 60ch)
+    
+        &:last-of-type
+            margin-bottom: 3ch
+
+        
+
+    

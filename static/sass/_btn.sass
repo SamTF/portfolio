@@ -1,0 +1,29 @@
+// Styles A tags to look like rectangular buttons
+// Used for "Read more" and "play now" type stuff in the Summary section
+
+%btn
+    // Box design
+    background-color: $accent-colour
+    padding: 15px 20px
+
+    // Text
+    font-family: $body-font
+    font-size: $body-size
+    text-decoration: none
+
+    // Animation
+    transition: all 250ms
+
+    &:hover
+        background-color: darken($accent-colour, 25%)
+        font-size: $body-size + 0.125rem
+        padding: 12px 20px
+        
+        // outline: 2px dashed white
+        // outline-offset: 6px
+
+
+%btn-dark
+    @extend %btn
+
+    background-color: $main-colour
