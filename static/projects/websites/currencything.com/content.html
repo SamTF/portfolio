@@ -1,0 +1,40 @@
+<!-- Image Showcase -->
+<div class="center">
+    <section class="showcase">
+        <div class="slides-small">
+            <a href="/static/projects/websites/currencything.com/showcase/main.jpg"><img src="/static/projects/websites/currencything.com/showcase/main.webp" title="Main page" alt="main" loading="lazy"></a>
+            <a href="/static/projects/websites/currencything.com/showcase/user.jpg"><img src="/static/projects/websites/currencything.com/showcase/user.webp" title="User profile" alt="user" loading="lazy"></a>
+            <a href="/static/projects/websites/currencything.com/showcase/embeds.jpg"><img src="/static/projects/websites/currencything.com/showcase/embeds.jpg" title="OpenGraph/Twitter embeds" alt="embeds" loading="lazy"></a>
+            <a href="/static/projects/websites/currencything.com/showcase/graphs.gif"><img src="/static/projects/websites/currencything.com/showcase/graphs.webp" title="Expandable charts" alt="graphs" loading="lazy"></a>
+            <a href="/static/projects/websites/currencything.com/showcase/milestones.gif"><img src="/static/projects/websites/currencything.com/showcase/milestones.webp" title="Milestone achievements" alt="milestones" loading="lazy"></a>
+            <a href="/static/projects/websites/currencything.com/showcase/scroll.gif"><img src="/static/projects/websites/currencything.com/showcase/scroll.webp" title="Smooth scrolling anchors" alt="scroll" loading="lazy"></a>
+            <a href="/static/projects/websites/currencything.com/showcase/stats.gif"><img src="/static/projects/websites/currencything.com/showcase/stats.webp" title="Time period buttons" alt="buttons" loading="lazy"></a>
+        </div>
+    </section>
+</div>
+
+<!-- Summary -->
+<section class="summary center" id="summary">
+    <div>
+        <h1>Summary</h1>
+        <p><strong>Currencything.com</strong> is a full-stack website that tracks the Currency Thing blockchain, as well as graph several statistics about it and all its users. It has a Python back-end powered by Flask.</p>
+        <a href="https://currencything.com/" target="_blank">What is this, some kinda currency thing? 🤡</a>
+    </div>
+</section>
+
+<!-- Creation Process -->
+<section class="creation center" id="creation">
+    <div>
+        <span class="full-text"><h1>Creation Process</h1></span>
+        <span class="short-text"><h1>Creation</h1></span>
+
+        <p><strong><a href="http://Currencything.com">Currencything.com</a></strong> is a full-stack website that displays the Currency Thing blockchain, from my Discord cryptocurrency experiment. It dynamically displays every transaction on the blockchain, updated every time a new transaction is made. It has the exact same format, except with an added date column (which is absent on Discord since it would be redundant).</p>
+        <p>It features interesting statistics, like the total supply, amount of things mined and traded in the last X days, currency thing distribution among users, and the biggest trade. If you click on these statistic cards, it expands to reveal a graph tracking the value over all time, instead of just the last X days. I also added buttons at the top that allow you choose what time period to display stats for, which automatically refreshes the data without having to reload the page.</p>
+        <p>You can click on any user’s name in the blockchain to go to their profile, which contains similar statistics specific for that users, and also displays a table containing all transactions that they participated in.</p>
+        <p>This website was made with a <a href="https://flask.palletsprojects.com/en/2.0.x/">Flask</a> back-end, and it was my first time using it. I wanted to have the codebase for this website in Python, to match the code of the Currency Thing discord bot, and Flask was the perfect solution. It’s extremely lightweight but powerful, and allows you have to variable URLs, so I just had to make a defalt user page template, then based on the username in the URL, Flask fetches all the relevant data to that user. Having Python as the back-end allowed me to use <a href="https://pandas.pydata.org/">Pandas</a> for getting all sorts of data from the Blockchain, and using <a href="https://matplotlib.org/">Matplotlib</a> to create the graphs dynamically.</p>
+        <p>I also added custom cursors and sound effects when you click things to keep things fun 🤡.</p>
+        <p>I had a great time making this website and loved all the things that Flask empowers you to do with a Python back-end, so much so that I decided to use Flask again to make my portfolio website you’re browsing right now!</p>
+
+        <a href="/projects/video_games/micro_mike/post-mortem.pdf">Link to a file or something</a>
+    </div>
+</section>
