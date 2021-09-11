@@ -20,7 +20,7 @@ app = Flask(__name__)
 @app.route('/things-ive-made')
 def home():
     # return 'Welcome home! 🐍'
-    return render_template('home.html', title="Things I've Made", projects=PROJECTS.list, footer_title="Sebastião Casaleiro", creation_date="Last updated September 8, 2021")
+    return render_template('home.html', title="Things I've Made", projects=PROJECTS.list, footer_title="Sebastião Casaleiro", creation_date="2021")
 
 
 ### Project page
