@@ -2,8 +2,7 @@
 ### Will loop through every project in the projects directory, and serve an HTML page for it based on pre-made HTML and CSS/SASS templates
 
 ### IMPORT
-from flask import Flask, render_template
-from flask.scaffold import F        # The main thing - render_template is used to load HTML files
+from flask import Flask, render_template        # The main thing - render_template is used to load HTML files     
 from markupsafe import Markup                   # Used to pass variables as HTML markup instead of plain text - https://tedboy.github.io/flask/generated/generated/flask.Markup.html
 import projects                                 # My script that lists all the projects and project categories in the ./static/projects folder
 from flask import send_from_directory           # Sending a static file directly - TEMP
@@ -21,7 +20,7 @@ app = Flask(__name__)
 @app.route('/things-ive-made')
 def home():
     # return 'Welcome home! 🐍'
-    return render_template('home.html', title="Things I've Made", projects=PROJECTS.list)
+    return render_template('home.html', title="Things I've Made", projects=PROJECTS.list, footer_title="Sebastião Casaleiro", creation_date="Last updated September 8, 2021")
 
 
 ### Project page
@@ -40,7 +39,7 @@ def project_page(category, project):
 
     
     # Returing the Project Page
-    return render_template('_project.html', title=p.title, banner=p.banner, content=Markup(p.HTML_content))
+    return render_template('_project.html', title=p.title, banner=p.banner, content=Markup(p.HTML_content), footer_title=p.title, creation_date=p.creation_date)
 
 
 ### PDF Files - temp!! NGINX will take care of it later -> https://stackoverflow.com/questions/20646822/how-to-serve-static-files-in-flask

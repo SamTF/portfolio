@@ -1,0 +1,33 @@
+footer
+    height: 2.5vh
+    width: 100vw
+
+    // margin-bottom: 1rem
+    // padding: 1rem
+
+    // centered display
+    display: grid
+    place-items: center
+
+    // font
+    font-family: $body-font
+    font-size: $body-size - 0.2rem
+    font-weight: 700
+
+    
+    .footer-grid
+        display: grid
+        grid-template-columns: 1fr 1fr
+        justify-items: start
+        align-items: start
+
+        width: clamp(55ch, 50%, 95ch)
+
+        // line-height: 1.67em
+        // letter-spacing: 0.5rem
+
+        span
+            color: $accent-colour
+            
+            &:last-child
+                justify-self: end

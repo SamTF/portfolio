@@ -307,6 +307,32 @@ h2 {
   background-color: #000;
 }
 
+footer {
+  height: 2.5vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+  font-family: "Raleway", Tahoma, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+footer .footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: start;
+  align-items: start;
+  width: clamp(55ch, 50%, 95ch);
+}
+
+footer .footer-grid span {
+  color: #ff0062;
+}
+
+footer .footer-grid span:last-child {
+  justify-self: end;
+}
+
 .full-text {
   display: inline-block;
 }

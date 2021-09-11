@@ -21,6 +21,7 @@ class Project:
         self.description    =   name                                        # description for the thumbnail tooltip on the home page
         self.thumb          =   f'/{self.path}thumb.webp'                   # path to the thumbnail image
         self.banner         =   f'/{self.path}banner.webp'                  # path to the banner image
+        self.creation_date  =   '2000-02-24'                                # date when the project was created
 
         self.content        =   self.path + 'content.html'                  # path to the file with the HTML page content
 
@@ -30,6 +31,7 @@ class Project:
                 meta = json.load(f)
                 self.title          = meta['title']
                 self.description    = meta['description']
+                self.creation_date  = meta['date_created']
 
             print(self)
     
