@@ -1,0 +1,15 @@
+// For embedding youtube videos using iframe
+// https://www.youtube.com/watch?v=9YffrCViTVk
+
+.video-container
+    width: 100%
+    margin: 100px 0px
+
+    // When the screen is less than 940px, it makes the video use 100% of the screen width instead of the hardcoded 940px
+    @include screen-max(940px)
+        display: grid
+        place-items: center
+    
+        iframe
+            width: 100%
+            height: 150%

@@ -185,6 +185,10 @@ h2 {
   margin-bottom: 7ch;
 }
 
+.summary p a, .creation p a {
+  text-decoration: underline;
+}
+
 .creation {
   background-color: #ff0062;
 }
@@ -391,15 +395,15 @@ body {
   background-color: #000 !important;
 }
 
+.no-bot-margin {
+  margin-bottom: 0px;
+}
+
 .banner {
   object-fit: cover;
   width: 100%;
   min-height: 100px;
   background-color: white;
-}
-
-.blue {
-  background-color: #ffffff70;
 }
 
 ::-webkit-scrollbar {
