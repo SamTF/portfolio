@@ -1,0 +1,37 @@
+// Centers the layout in the center of the screen
+.about-container
+    width: 100vw
+    display: grid
+    place-items: center
+
+// The About Page layout
+.about-me
+    box-sizing: border-box
+
+    // grid layout
+    display: grid
+    grid-template-columns: 1fr 1fr
+    place-items: center
+
+    // design
+    gap: 0rem
+    width: 50%
+    border: 10px solid #be2f41//$text-colour
+    
+
+    p
+        width: clamp(35ch, 55vw, 40ch)
+    
+    img
+        max-height: 50vh
+    
+    
+
+    // Changing the layout for mobile: 1 column stacked, with the portrait at the top and the bio below
+    @include screen-max(1280px)
+        grid-template-columns: 1fr
+        width: 100%
+
+        .about-portrait
+            order: -1   // brings the portrait div to the top! wow!
+            margin-bottom: 5rem

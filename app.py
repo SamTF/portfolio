@@ -22,6 +22,13 @@ def home():
     # return 'Welcome home! 🐍'
     return render_template('home.html', title="Things I've Made", projects=PROJECTS.list, footer_title="Sebastião Casaleiro", creation_date="2021")
 
+### About Me Page
+@app.route('/about')
+@app.route('/me')
+@app.route('/about-me')
+def about():
+    return render_template('about.html', title='About Me :)', footer_title='Sebastião Casaleiro', creation_date='2021')
+
 
 ### Project page
 @app.route('/<category>/<project>')
