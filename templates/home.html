@@ -12,19 +12,19 @@
         <p>Here's a cross-section of some projects I've made.</p>
     </section>
 
-    {% for category, project_list in projects.items() %}
+    {% for category in projects %}
         <!-- Category Section -->
-        <section id="video-games" class="center">
+        <section id={{category.name}} class="center">
 
             <!-- Section Header -->
             <div class="section-header">
-                <h2>{{category}}</h2>
+                <h2>{{category.title}}</h2>
             </div>
 
             <!-- Horizontal slider with the projects -->
             <div class="showcase">
                 <div class="slides">
-                    {% for project in project_list %}
+                    {% for project in category.list %}
                         <a href="{{ project.URL }}"><div class="showcase-item" data-desc="{{ project.description }}">
                             <img src="{{ project.thumb }}" alt={{ project.name }} loading="lazy">
                         </div></a>

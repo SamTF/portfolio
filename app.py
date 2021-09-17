@@ -9,6 +9,7 @@ from flask import send_from_directory           # Sending a static file directly
 
 ### CONSTANTS
 PROJECTS = projects.Projects()
+print(PROJECTS.list)
 
 ### WEBSITE PAGES #############################
 # Initialises Flask
@@ -34,11 +35,11 @@ def about():
 @app.route('/<category>/<project>')
 def project_page(category, project):
     # Checks if the category exists - if not instantly throws a 404 error
-    if category not in PROJECTS.list.keys():
+    if not PROJECTS.category_exists(category):
         return f'<center><code><h1>Error 404: directory <em>{category}</em> not found</h1></code></center>'
     
     # Checks if a Project object exists with that name
-    p = PROJECTS.find_name(project, category)
+    p = PROJECTS.get_project(project, category)
 
     # If the project doesn't exist
     if not p:

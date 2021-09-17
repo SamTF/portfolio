@@ -5,12 +5,16 @@ import os                                                                   # to
 import json                                                                 # to read JSON files from disk
 import operator                                                             # to sort a list of classes by attribute
 
+# test
+from random import randrange
+
 ### Constants   ##################
 ROOT = 'static/projects/'
 CONTENT = f'{ROOT}/content.html'
 
 
 ### Classes     ##################
+# PROJECT
 class Project:
     def __init__(self, name, category):
         self.name           =   name                                        # the name of the project folder
@@ -53,20 +57,75 @@ class Project:
                 return f.read()
     
 
+
+# CATEGORY
+class Category:
+    # Initialises the class object
+    def __init__(self, name: str) -> None:
+        self.name = name
+        self.title = name.replace('_', ' ')
+        self.path = f'{ROOT}{name}/'
+        self.order = randrange(10)
+
+        # searching for subdirectories and creating Project instances
+        self.projects = inst_proj(name, get_folders(self.path))
+
+        # loads a meta.json file if it exists to get additional metadata
+        meta_file = f'{self.path}.meta.json'
+        if os.path.exists(meta_file):
+            with open(meta_file) as f:
+                meta = json.load(f)
+                self.order = meta['order']
+    
+
+    def get_project(self, name:str) -> Project:
+        '''
+        Searches for a Project object m=by name, and returns it if it exists.
+
+        name: Name of the project (its folder)
+        '''
+        try:    return [x for x in self.projects if x.name == name][0]
+        except: return None
+    
+
+    # A representation of the Object when printed
+    def __repr__(self) -> str:
+        return f'\nCategory #{self.order}: {self.title} @ {self.path}\n>>> {self.projects}\n\n'
+    
+
+    # Returns the list of all projects in this category
+    @property
+    def list(self):
+        return self.projects
+
+
+# PROJECTS MAIN CLASS
 class Projects:
     def __init__(self):
-        self.projects = get_projects()
+        # self.projects = get_projects()
+        self.projects = inst_categories(get_folders(ROOT))
+        
     
     def reload_projects(self):
-        self.projects = get_projects()
+        self.projects = inst_categories(get_folders(ROOT))
     
-    def find_name(self, name:str, category:str):
+    
+    def category_exists(self, category: str):
+        return os.path.exists(f'{ROOT}{category}/')
+    
+    # Getting a Project by name
+    def get_project(self, name:str, category:str) -> Project:
         '''
-        Checks if a project by the given name exists in the category. Returns the Project object if found, otherwise returns None.
+        Searches for a Project by its name and its Category name, and returns it if it exists
+
+        name: Name of the project (same as the project folder)
+        category: Name of the category (same the project's parent folder)
         '''
-        try:
-            return [x for x in self.projects[category] if x.name == name][0]
-        except:
+        category = [c for c in self.projects if c.name == category]          # Gets a list of Category objects that match that name (there should at most be 1)
+
+        if category:
+            return category[0].get_project(name)
+        else:
             return None
     
     @property
@@ -78,6 +137,9 @@ class Projects:
 ### Functions   ##################
 # Gets all the directories in a path (SUPER FAST)
 def get_folders(root: str):
+    '''
+    Gets all the directories in a given path
+    '''
     current, dirs, files = next(os.walk(root))
     return dirs
 
@@ -90,44 +152,24 @@ def inst_proj(c:str, projects:list):
     projects: list of items for which to create Project class instances
     '''
     l = (Project(p, c) for p in projects)
-    # return list(l)
-
     sorted_list = sorted(l, key=operator.attrgetter('creation_date'), reverse=True)
     return sorted_list
 
 
 
-# Gets the categories and all of their subdirectories, and saves them into a dictionary
-def get_projects_simple(root):
-    categories = get_folders(root)
-    projects = {x: get_folders(root + x) for x in categories}
-
-    return projects
-
-# Same as get_projects, but saves each project as a Project instance instead of just a string
-def get_projects():
-    categories = get_folders(ROOT)
-    projects = {c: inst_proj(c, get_folders(ROOT+c)) for c in categories}
-    return projects
+# Instantiating Category objects for each subfolder in the projects/ folder
+def inst_categories(dirs: list):
+    '''
+    Creates Category class instances for each directory in the list of dirs given.
+    '''
+    categories = [Category(dir) for dir in dirs]                                    # creates a Category object for each folder in the projects directory, and stores them all in a list
+    categories = sorted(categories, key=operator.attrgetter('order'))               # sorts the list by Category order attribute
+    return categories
 
 
 
 ### Running the script #########
 if (__name__ == '__main__'):
-    # projects = get_projects()
-    # print(projects)
-    # print('------')
-
-    # for key, value in projects.items():
-    #     for i in value:
-    #         print(i)
-    
-    # print('############\n')
-
     p = Projects()
-    
-    for x in p.projects:
-        print(p.projects[x])
-        print('\n')
 else:
-    print('PROJECT_LIST IMPORTED')
+    print('PROJECTS IMPORTED')
