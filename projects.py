@@ -1,8 +1,9 @@
 ### Gets all the Project Categories and their respective Projects
 
 ### Imports     ##################
-import os
-import json
+import os                                                                   # to get the directories, subdirectories, and files
+import json                                                                 # to read JSON files from disk
+import operator                                                             # to sort a list of classes by attribute
 
 ### Constants   ##################
 ROOT = 'static/projects/'
@@ -33,7 +34,6 @@ class Project:
                 self.description    = meta['description']
                 self.creation_date  = meta['date_created']
 
-            print(self)
     
     # A representation of the Object when printed
     def __repr__(self) -> str:
@@ -90,7 +90,10 @@ def inst_proj(c:str, projects:list):
     projects: list of items for which to create Project class instances
     '''
     l = (Project(p, c) for p in projects)
-    return list(l)
+    # return list(l)
+
+    sorted_list = sorted(l, key=operator.attrgetter('creation_date'), reverse=True)
+    return sorted_list
 
 
 
@@ -122,5 +125,9 @@ if (__name__ == '__main__'):
     # print('############\n')
 
     p = Projects()
+    
+    for x in p.projects:
+        print(p.projects[x])
+        print('\n')
 else:
     print('PROJECT_LIST IMPORTED')
