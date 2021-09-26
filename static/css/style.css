@@ -127,25 +127,25 @@ h2 {
   font-size: 4.5rem;
 }
 
-.summary-big, .summary, .creation {
+.summary-big, .summary, .creation, .creation-alt {
   background-color: #0e0e0e;
   padding: 5vh 0vh;
 }
 
-.summary-big p, .summary p, .creation p {
+.summary-big p, .summary p, .creation p, .creation-alt p {
   color: #f4f4f4;
   font-family: "Raleway", Tahoma, sans-serif;
   line-height: 1.67em;
 }
 
-.summary-big p a, .summary p a, .creation p a {
+.summary-big p a, .summary p a, .creation p a, .creation-alt p a {
   text-decoration: none;
   background-color: transparent;
   padding: 0;
   margin: 0;
 }
 
-.summary-big p a:hover, .summary p a:hover, .creation p a:hover {
+.summary-big p a:hover, .summary p a:hover, .creation p a:hover, .creation-alt p a:hover {
   padding: 0;
   margin: 0;
   font-size: 1.25rem;
@@ -169,46 +169,46 @@ h2 {
   }
 }
 
-.summary h1, .creation h1 {
+.summary h1, .creation h1, .creation-alt h1 {
   font-size: 4.5rem;
   text-align: left;
   margin-bottom: 0.3em;
 }
 
-.summary p, .creation p {
+.summary p, .creation p, .creation-alt p {
   font-size: 1.25rem;
   width: clamp(45ch, 75vw, 80ch);
   text-align: justify;
 }
 
-.summary p:last-of-type, .creation p:last-of-type {
+.summary p:last-of-type, .creation p:last-of-type, .creation-alt p:last-of-type {
   margin-bottom: 7ch;
 }
 
-.summary p a, .creation p a {
+.summary p a, .creation p a, .creation-alt p a {
   text-decoration: underline;
 }
 
-.creation {
+.creation, .creation-alt {
   background-color: #ff0062;
 }
 
-.creation h1 {
+.creation h1, .creation-alt h1 {
   color: #000;
   margin-bottom: 0.4em;
 }
 
-.creation p {
+.creation p, .creation-alt p {
   color: #000;
   margin-bottom: 3ch;
 }
 
-.creation strong {
+.creation strong, .creation-alt strong {
   color: #000;
   font-weight: 700;
 }
 
-.creation li {
+.creation li, .creation-alt li {
   font-family: "Raleway", Tahoma, sans-serif;
   font-size: 1.25rem;
   color: #000;
@@ -218,12 +218,28 @@ h2 {
   width: clamp(35ch, 50vw, 60ch);
 }
 
-.creation li:last-of-type {
+.creation li:last-of-type, .creation-alt li:last-of-type {
   margin-bottom: 3ch;
 }
 
-.creation code {
+.creation code, .creation-alt code {
   color: #000;
+}
+
+.creation-alt {
+  background-color: #000 !important;
+}
+
+.creation-alt p, .creation-alt li {
+  color: #f4f4f4;
+}
+
+.creation-alt h1 {
+  color: #ff0062;
+}
+
+.creation-alt a {
+  background-color: #ff0062 !important;
 }
 
 .showcase {
@@ -292,7 +308,7 @@ h2 {
   }
 }
 
-.summary a, .creation a {
+.summary a, .creation a, .creation-alt a {
   background-color: #ff0062;
   padding: 15px 20px;
   font-family: "Raleway", Tahoma, sans-serif;
@@ -301,13 +317,13 @@ h2 {
   transition: all 250ms;
 }
 
-.summary a:hover, .creation a:hover {
+.summary a:hover, .creation a:hover, .creation-alt a:hover {
   background-color: #800031;
   font-size: 1.375rem;
   padding: 12px 20px;
 }
 
-.creation a {
+.creation a, .creation-alt a {
   background-color: #000;
 }
 
