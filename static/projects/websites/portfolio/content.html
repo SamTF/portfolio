@@ -1,0 +1,31 @@
+<!-- Image Showcase -->
+<section id="iframe">
+    <div class="embed-container center">
+        <iframe src="/" width="720" height="360" frameborder="0" allowfullscreen></iframe>   
+    </div>
+</section>
+
+<!-- Summary -->
+<section class="summary center" id="summary">
+    <div>
+        <h1>Summary</h1>
+        <p>A responsive modular website showcasing some of my various projects. Powered by Python, Flask, Jinja, and Sass. Designed with an object oriented paradigm that makes it really easy to add or modify new projects.</p>
+        <a href="/" target="_blank">You're on it right now!</a>
+    </div>
+</section>
+
+<!-- Creation Process -->
+<section class="creation center" id="creation">
+    <div>
+        <span class="full-text"><h1>Creation Process</h1></span>
+        <span class="short-text"><h1>Creation</h1></span>
+
+        <p>My portfolio website is a completely modular website powered by <a href="https://www.python.org/">Python</a> and <a href="https://flask.palletsprojects.com/en/2.0.x/">Flask.</a> I used <a href="https://sass-lang.com/">Sass</a> for the design styling and responsiveness. No front-end frameworks or Javascript were used, the UI is entirely handled by the Flask templating engine, <a href="https://jinja.palletsprojects.com/en/3.0.x/">Jinja</a>.</p>
+        <p>I call it modular because of it’s structure. Nothing is hardcoded except the “About” page. The website is organised into Categories and their respective Projects. For example, <strong>“Video Games”</strong> is a category and <strong>“Micro Mike”</strong> is a project. On the server, this works by treating every directory inside the <code>/static/projects/</code> directory as a <strong>Category</strong>; and its subdirectories are the respective <strong>Projects</strong>. Thus, it’s modular because to add a new Category all I have to do is create a new folder inside <code>/static/projects</code>, and then create a folder inside that to create a new Project webpage. No additional coding or editing is needed.</p>
+        <p>Inside each Project folder are all its required files: thumbnail and banner images (<code>.webp</code>), webpage content (<code>.html</code>), any images, audio files, or PDFs to embed in the page content, and a metadata file with the project title, description, and creation date (<code>.json</code>). Using Python, I created class objects <code>Category</code> and <code>Project</code>, which store all the required properties. For Category, it stores its name, sorting order in the main page, and its respective Project objects. For Project, it stores all the metadata as properties, as well as its generated URL, and full path on disk. Then I loop through each directory and subdirectory in the <code>/static/projects/</code> path and automatically generate all the objects.</p>
+        <p>Thanks to Jinja, I can create object-oriented HTML templates that inherit all the required elements, so in a Project’s HTML content file I <strong>only</strong> need to worry about the information I want to display for this specific project. The headers and footers are automatically inherited from the templates, the Project’s content is read from the content.html file in its folder, and metadata such as Title and Creation Date are read from its object properties. In case any or all of these files aren’t available, a fall-back project content file is used.</p>
+        <p>Maybe I rambled on too much, but honestly I felt pretty clever when designing this system :)</p>
+                
+        <a href="https://github.com/SamTF/portfolio" target="_blank">Check out the code 🧠</a>
+    </div>
+</section>
