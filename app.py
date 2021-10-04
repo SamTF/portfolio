@@ -9,7 +9,22 @@ from flask import send_from_directory           # Sending a static file directly
 
 ### CONSTANTS
 PROJECTS = projects.Projects()
-print(PROJECTS.list)
+
+HOME = {
+    'title'         : "Things I've Made",
+    'footer'        : 'Sebastião Casaleiro',
+    'creation_date' : '2021',
+    'description'   : "A showcase of projects I've made across various fields.",
+    'thumb'         : "/static/images/website_thumbnail.webp"
+}
+
+ABOUT = {
+    'title'         : 'About Me :)',
+    'footer'        : 'Sebastião Casaleiro',
+    'creation_date' : '2021',
+    'description'   : 'A short bio of who I am and what I like to do :)',
+    'thumb'         : '/static/images/website_thumbnail.webp'
+}
 
 ### WEBSITE PAGES #############################
 # Initialises Flask
@@ -21,14 +36,14 @@ app = Flask(__name__)
 @app.route('/things-ive-made')
 def home():
     # return 'Welcome home! 🐍'
-    return render_template('home.html', title="Things I've Made", projects=PROJECTS.list, footer_title="Sebastião Casaleiro", creation_date="2021")
+    return render_template('home.html', title=HOME['title'], projects=PROJECTS.list, footer_title=HOME['footer'], creation_date=HOME['creation_date'], description=HOME['description'], thumb=HOME['thumb'])
 
 ### About Me Page
 @app.route('/about')
 @app.route('/me')
 @app.route('/about-me')
 def about():
-    return render_template('about.html', title='About Me :)', footer_title='Sebastião Casaleiro', creation_date='2021')
+    return render_template('about.html', title=ABOUT['title'], footer_title=ABOUT['footer'], creation_date=ABOUT['creation_date'], description=ABOUT['description'], thumb=ABOUT['thumb'])
 
 
 ### Project page
@@ -47,7 +62,7 @@ def project_page(category, project):
 
     
     # Returing the Project Page
-    return render_template('_project.html', title=p.title, banner=p.banner, content=Markup(p.HTML_content), footer_title=p.title, creation_date=p.creation_date)
+    return render_template('_project.html', title=p.title, banner=p.banner, content=Markup(p.HTML_content), footer_title=p.title, creation_date=p.creation_date, description=p.description, thumb=p.thumb)
 
 
 ### PDF Files - temp!! NGINX will take care of it later -> https://stackoverflow.com/questions/20646822/how-to-serve-static-files-in-flask

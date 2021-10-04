@@ -6,9 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Link embed stuff! -->
+    <meta property="og:site_name"   content="sam.freelancepolice.org">          <!-- Top of the embed -->
+    <meta property="og:title"       content="{{ title }}">                      <!-- Big Bold Letters -->
+    <meta property="og:description" content="{{ description}}">                 <!-- Subtitle, smaller, under title -->
+    <meta property="og:image"       content="{{ thumb }}">                      <!-- Cool lil thumbnail to the side! :) -->
+    <meta property="og:url"         content="http:/sam.freelancepolice.org">    <!-- Link when you click on the title -->
+    <meta name="theme-color"        content="#FF0062">                          <!-- Embed sidebar colour! -->
+    <meta name="twitter:card"       content="summary_large_image">              <!-- BIG image -->
+
+    <!-- Favicon Tab Icon -->
+    <link rel="icon" type="image/png" href="/static/images/favicon.png">
+
     <!-- Main CSS Stylesheet -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Tab title -->
     <title>{{ title }} | Sebastião Casaleiro</title>
