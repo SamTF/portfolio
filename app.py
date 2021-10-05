@@ -64,17 +64,3 @@ def project_page(category, project):
     # Returing the Project Page
     return render_template('_project.html', title=p.title, banner=p.banner, content=Markup(p.HTML_content), footer_title=p.title, creation_date=p.creation_date, description=p.description, thumb=p.thumb)
 
-
-### PDF Files - temp!! NGINX will take care of it later -> https://stackoverflow.com/questions/20646822/how-to-serve-static-files-in-flask
-@app.route('/documents/<category>/<project>/<filename>')
-def serve_pdf(category, project, filename):
-    return send_from_directory(f'./static/projects/{category}/{project}/', filename)
-
-
-    
-
-
-### RUNNING APP #############################
-if (__name__ == '__main__'):
-    app.run(debug=True)
-    # app.run(debug=False, port=4999, host='localhost')
