@@ -1,0 +1,48 @@
+<!-- Image Showcase -->
+<div class="center">
+    <section class="showcase">
+        <div class="slides-small">
+            <a href="https://i.imgur.com/3MfOYVr.gif"><img src="/static/projects/websites/tf2.freelancepolice.org/showcase/demo.webp" title="Usage Demo" alt="main" loading="lazy"></a>
+            <a href="/static/projects/websites/tf2.freelancepolice.org/showcase/tooltip.png"><img src="/static/projects/websites/tf2.freelancepolice.org/showcase/tooltip.webp" title="Item Tooltip" alt="tooltip" loading="lazy"></a>
+            <a href="/static/projects/websites/tf2.freelancepolice.org/showcase/mobile.gif"><img src="/static/projects/websites/tf2.freelancepolice.org/showcase/mobile.webp" title="Mobile Layout" alt="mobile" loading="lazy"></a>
+            <a href="/static/projects/websites/tf2.freelancepolice.org/showcase/mobile_scroll.gif"><img src="/static/projects/websites/tf2.freelancepolice.org/showcase/mobile_scroll.gif" title="Scrolling on Mobile" alt="scrolling" loading="lazy"></a>
+            <a href="/static/projects/websites/tf2.freelancepolice.org/showcase/searching_filtering.gif"><img src="/static/projects/websites/tf2.freelancepolice.org/showcase/searching_filtering360.gif" title="Searching & Filtering" alt="searching and filtering" loading="lazy"></a>
+            <a href="/static/projects/websites/tf2.freelancepolice.org/showcase/tooltip_mobile.png"><img src="/static/projects/websites/tf2.freelancepolice.org/showcase/tooltip_mobile.webp" title="Item Tooltip on Mobile" alt="tooltip on mobile" loading="lazy"></a>
+        </div>
+    </section>
+</div>
+
+<!-- Summary -->
+<section class="summary center" id="summary">
+    <div>
+        <h1>Summary</h1>
+        <p>A minimal and elegant endless-scrolling website to view anyone's TF2 inventory, with no extra bs or signing in required. It allows searching for item names and filtering by class.</p>
+        <a href="https://tf2.freelancepolice.org/" target="_blank">View your items here! 🎩</a>
+    </div>
+</section>
+
+<!-- Creation Process -->
+<section class="creation center" id="creation">
+    <div>
+        <span class="full-text"><h1>Creation Process</h1></span>
+        <span class="short-text"><h1>Creation</h1></span>
+        
+        <p>I had been doing many Svelte tutorials and felt pretty confident with my skill and understanding of it, but I needed to make my own project from scratch to oficialise it. I had the idea of creating a <a href="https://www.teamfortress.com/">Team Fortress 2</a> item explorer because it would use everything I had been learning:</p>
+        <ul>
+            <li>fetching data from a 3rd-party API and formatting it to my needs</li>
+            <li>working with await and promises in JS</li>
+            <li>searching and filtering data</li>
+        </ul>
+        <p>On top of this, I also wanted a way to view my entire TF2 inventory in one go, and not only is every other TF2 backpack viewer paginated, they’re also slow, ugly, and usually require signing into your Steam account.</p>
+        <p>I started with creating the Flask backend to fetch the API data: which would prove to be the hardest part. I started by trying to use Valve’s official SteamAPI, but it returns data in a very barebones compressed way, including only IDs and references to a schema file, making it a nightmare to work with. Then I found an API endpoint on stackoverflow that returns the data with the full text values and images, alongside their appropriate colours. This was a god-send, but it had a major drawback: it’s heavily rate-limited, with 3-4 consecutive requests being enough to get a null response timeout.</p>
+        <p>Due to this, I ended up creating a caching system. After fetching a user’s data and formatting it to my needs, I save it to disk as a JSON, including its hash and time of update. Then when a user requests backpack data from the website, I load it from disk instead of making unnecessary API calls. In case the data doesn’t yet exist on disk, I obviously do fetch it and create it. I also check when the last update was made, to make sure they don’t become too out of date. Currently it’s set to refresh every 24h which I believe to be more than reasonable.</p>
+        <p>If I had tens of thousands of users, I might have to move to an external database like Firebase for this to avoid flooding my Linux VM Server. But I don’t, so it works perfectly :)</p>
+        <p>The Svelte part of this had its own challenges, namely how to display the tooltip at the exact mouse position. It’s its own component with absolute positioning set to the mouse position, accounting for window scrolling. Organising the filtering system to allow both searching of item names and character classes simultaneously was tricky as first, but I arrived at a clean solution using reactive values. The biggest challenge was probably how to hold the website together while waiting for the Promises to resolve. I ended up displaying the Item grid only if the items array and the user profile section had any values; otherwise I’d display the running scout gif as a cool loading screen.</p>
+        <p>Error handling was also implemented, with the Flask backend sending an error msg in the JSON request detailing what went wrong (profile not found, private profile, misc error), and Svelte displays that info with a sad heavy gif to the website user.</p>
+        <p>To sum it up: backend powered by <a href="https://flask.palletsprojects.com/en/2.0.x/">Flask</a>, front-end powered by <a href="https://svelte.dev/">Svelte</a>, CSS powered by <a href="https://sass-lang.com/">Sass</a>, and Steam data powered by <a href="https://partner.steamgames.com/doc/webapi_overview">SteamAPI</a> and <a href="https://steamcommunity.com/inventory/%3CSTEAMID64%3E/440/2?count=5000">steamcommunity.com</a>. TF2 is property of Valve Software.</p>
+
+
+        
+        <a href="https://github.com/SamTF/tf2-backpack" target="_blank">Check out the source code</a>
+    </div>
+</section>
