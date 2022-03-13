@@ -1,0 +1,54 @@
+<!-- Image Showcase -->
+<div class="center">
+    <section class="showcase">
+        <div class="slides-small">
+            <a href="/static/projects/websites/wttr.freelancepolice.org/showcase/demo.gif"><img src="/static/projects/websites/wttr.freelancepolice.org/showcase/demo.webp" title="Web app demo" alt="main" loading="lazy"></a>
+            <a href="/static/projects/websites/wttr.freelancepolice.org/showcase/demo_themes.gif"><img src="/static/projects/websites/wttr.freelancepolice.org/showcase/demo_themes_360.gif" title="Theme toggle" alt="main" loading="lazy"></a>
+            <a href="/static/projects/websites/wttr.freelancepolice.org/showcase/wttr.png"><img src="/static/projects/websites/wttr.freelancepolice.org/showcase/wttr.webp" title="Current weather" alt="main" loading="lazy"></a>
+            <a href="/static/projects/websites/wttr.freelancepolice.org/showcase/tmrw.png"><img src="/static/projects/websites/wttr.freelancepolice.org/showcase/tmrw.webp" title="Tomorrow's weather" alt="main" loading="lazy"></a>
+            <a href="/static/projects/websites/wttr.freelancepolice.org/showcase/wttr_dark.png"><img src="/static/projects/websites/wttr.freelancepolice.org/showcase/wttr_dark.webp" title="Current weather dark theme" alt="main" loading="lazy"></a>
+            <a href="/static/projects/websites/wttr.freelancepolice.org/showcase/tmrw_dark.png"><img src="/static/projects/websites/wttr.freelancepolice.org/showcase/tmrw_dark.webp" title="Tomorrow's weather dark theme" alt="main" loading="lazy"></a>
+            <a href="/static/projects/websites/wttr.freelancepolice.org/showcase/api.jpg"><img src="/static/projects/websites/wttr.freelancepolice.org/showcase/api.webp" title="Direct weather card from API" alt="main" loading="lazy"></a>
+        </div>
+    </section>
+</div>
+
+<!-- Summary -->
+<section class="summary center" id="summary">
+    <div>
+        <h1>Summary</h1>
+        <p>This is a minimalist and light-hearted weather app, showing current conditions and forecasts for any city. Basically, a web app for <a href="/discord_bots/david_lynch">my Weather Report bot.</a></p>
+        <a href="https://wttr.freelancepolice.org/" target="_blank">How's the weather? 🌞</a>
+    </div>
+</section>
+
+<!-- Creation Process -->
+<section class="creation center" id="creation">
+    <div>
+        <span class="full-text"><h1>Creation Process</h1></span>
+        <span class="short-text"><h1>Creation</h1></span>
+        <p>I had already made all the code and designs required to create weather reports for any city when I created my Discord <a href="/discord_bots/david_lynch">Weather Report bot</a>, and I didn't want to limit to Discord; I wanted anyone to be able to use it from anywhere. Thus, I decided to create a web interface for the weather report API.</p>
+        <p>To quickly summarise my Weather Reports, the main features are:</p>
+        <ul>
+            <li>Works for the majority of cities worldwide</li>
+            <li>Show current temperature, conditions, and local time</li>
+            <li>Shows tri-hourly forecasts for the entire day with a progression marker</li>
+            <li>Forecasts hourly and average temp and conditions for tomorrow</li>
+            <li>Minimalist and sleek, while also informative and readable design</li>
+            <li>Cute icons made by me! ☁️🌞</li>
+        </ul>
+
+        <p>The Weather Report website follows the same principles, featuring:</p>
+        <ul>
+            <li>A simple interface</li>
+            <li>Super fast responsiveness</li>
+            <li>Light and Dark themes</li>
+            <li>Page’s accent colour dynamically changes to match forecast</li>
+            <li>Automatically generates weather card for the user's city</li>
+            <li>Query the API directly using <code>/wttr/[city name]</code></li>
+        </ul>
+
+        <p>I used Svelte for the front-end, and Python Flask for the back-end. The back-end API uses Pillow for generating the images, and comes from my David Lynch Weather Bot, with some tweaks made. All images and weather card design were made by me.</p>
+        <a href="https://github.com/SamTF/weather-report.com">Check out the source code</a>
+    </div>
+</section>
