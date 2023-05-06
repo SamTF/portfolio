@@ -13,7 +13,7 @@ PROJECTS = projects.Projects()
 HOME = {
     'title'         : "Things I've Made",
     'footer'        : 'Sebastião Casaleiro',
-    'creation_date' : '2021',
+    'creation_date' : '2023',
     'description'   : "A showcase of projects I've made across various fields.",
     'thumb'         : "/static/images/website_thumbnail.webp"
 }
@@ -21,7 +21,7 @@ HOME = {
 ABOUT = {
     'title'         : 'About Me :)',
     'footer'        : 'Sebastião Casaleiro',
-    'creation_date' : '2021',
+    'creation_date' : '2023',
     'description'   : 'A short bio of who I am and what I like to do :)',
     'thumb'         : '/static/images/website_thumbnail.webp'
 }
