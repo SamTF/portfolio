@@ -64,3 +64,10 @@ def project_page(category, project):
     # Returing the Project Page
     return render_template('_project.html', title=p.title, banner=p.banner, content=Markup(p.HTML_content), footer_title=p.title, creation_date=p.creation_date, description=p.description, thumb=p.thumb)
 
+
+### CV Direct Link
+@app.route('/CV')
+@app.route('/cv')
+@app.route('/resume')
+def cv():
+    return send_from_directory('static', 'CV_2023.pdf')
