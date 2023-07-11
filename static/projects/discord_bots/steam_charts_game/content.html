@@ -1,0 +1,36 @@
+<!-- Image Showcase -->
+<div class="center">
+    <section class="showcase">
+        <div class="slides-small">
+            <a href="/static/projects/discord_bots/steam_charts_game/showcase/demo.mp4"><img src="/static/projects/discord_bots/steam_charts_game/showcase/demo.webp" alt="game demo" loading="lazy"></a>
+            <a href="/static/projects/discord_bots/steam_charts_game/showcase/screenshot1.png"><img src="/static/projects/discord_bots/steam_charts_game/showcase/screenshot1.webp" alt="Game UI" loading="lazy"></a>
+            <a href="/static/projects/discord_bots/steam_charts_game/showcase/screenshot2.png"><img src="/static/projects/discord_bots/steam_charts_game/showcase/screenshot2.webp" alt="Game UI 2" loading="lazy"></a>
+            <a href="/static/projects/discord_bots/steam_charts_game/showcase/correct.png"><img src="/static/projects/discord_bots/steam_charts_game/showcase/correct.webp" alt="Correct Answer" loading="lazy"></a>
+            <a href="/static/projects/discord_bots/steam_charts_game/showcase/game_over.png"><img src="/static/projects/discord_bots/steam_charts_game/showcase/game_over.webp" alt="Wrong Answer" loading="lazy"></a>
+            <a href="/static/projects/discord_bots/steam_charts_game/showcase/filters.png"><img src="/static/projects/discord_bots/steam_charts_game/showcase/filters.webp" alt="Game Filters" loading="lazy"></a>
+        </div>
+    </section>
+</div>
+
+<!-- Summary -->
+<section class="summary center" id="summary">
+    <div>
+        <h1>Summary</h1>
+        <p>A Discord bot game where you have to guess which Steam game has the most concurrent players at the moment.</p>
+        <a href="https://discord.com/oauth2/authorize?client_id=837341144718245988&scope=bot&permissions=2147534848" target="_blank">Invite the bot to your server 📈</a>
+    </div>
+</section>
+
+<!-- Creation Process -->
+<section class="creation center" id="creation">
+    <div>
+        <span class="full-text"><h1>Creation Process</h1></span>
+        <span class="short-text"><h1>Creation</h1></span>
+
+        <p>Steam Charts Game was inspired in part by the classic browser game Higher or Lower - but with Steam games instead of Google searches. It was also inspired by my buddy Joey constantly telling me that TF2 is a dead game despite it consistently being in the <a href="https://steamcharts.com/app/440">most played games on Steam.</a></p>
+        <p>The game is very simple and intuitive. The bot randomly selects two games available on Steam, and displays their steam page to the player, as well as two UI buttons - one button representing each game. Players simply click on the game that they believe has more players at the moment. If they win, they move on to the next round. The bot tracks how many points they have until they get it wrong and it’s game over.</p>
+        <p>Players can choose the games to be selected from several filters: popular games, highest rated games, popular new releases, or steam’s default search list.</p>
+        <p>It was created entirely in Python using <a href="https://discordpy.readthedocs.io/en/stable/">discord.py</a> and BeautifulSoup. Data is scraped from the Steam website and <a href="https://steamcharts.com/">Steam Charts</a> (I have no affiliation with Steam Charts).</p>
+
+    </div>
+</section>
