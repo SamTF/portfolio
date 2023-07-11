@@ -31,6 +31,15 @@ body
     color: $main-colour
     overflow-x: hidden
 
+// Body text
+p
+    // Bold on 1920x1080 or smaller
+    font-weight: bold
+    
+    // Light text on larger displays
+    @include screen-min(2000px)
+        font-weight: normal
+
 
 // The header card for each category of projects
 .section-header
