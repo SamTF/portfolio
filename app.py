@@ -71,3 +71,8 @@ def project_page(category, project):
 @app.route('/resume')
 def cv():
     return send_from_directory('static', 'CV_2023.pdf')
+
+### BA Thesis Direct Link
+@app.route('/thesis')
+def thesis():
+    return send_from_directory('static/projects/video_games/thesis/', 'Sebastião Casaleiro - Letting Players Draw Their Own Character.pdf')
