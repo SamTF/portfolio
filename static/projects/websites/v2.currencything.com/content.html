@@ -1,0 +1,38 @@
+<!-- Image Showcase -->
+<div class="center">
+    <section class="showcase">
+        <div class="slides-small">
+            <a href="/static/projects/websites/currencything.com/showcase/main.jpg"><img src="/static/projects/websites/currencything.com/showcase/main.webp" title="Main page" alt="main" loading="lazy"></a>
+            <a href="/static/projects/websites/currencything.com/showcase/user.jpg"><img src="/static/projects/websites/currencything.com/showcase/user.webp" title="User profile" alt="user" loading="lazy"></a>
+            <a href="/static/projects/websites/currencything.com/showcase/embeds.jpg"><img src="/static/projects/websites/currencything.com/showcase/embeds.jpg" title="OpenGraph/Twitter embeds" alt="embeds" loading="lazy"></a>
+            <a href="/static/projects/websites/currencything.com/showcase/graphs.gif"><img src="/static/projects/websites/currencything.com/showcase/graphs.webp" title="Expandable charts" alt="graphs" loading="lazy"></a>
+            <a href="/static/projects/websites/currencything.com/showcase/milestones.gif"><img src="/static/projects/websites/currencything.com/showcase/milestones.webp" title="Milestone achievements" alt="milestones" loading="lazy"></a>
+            <a href="/static/projects/websites/currencything.com/showcase/scroll.gif"><img src="/static/projects/websites/currencything.com/showcase/scroll.webp" title="Smooth scrolling anchors" alt="scroll" loading="lazy"></a>
+            <a href="/static/projects/websites/currencything.com/showcase/stats.gif"><img src="/static/projects/websites/currencything.com/showcase/stats.webp" title="Time period buttons" alt="buttons" loading="lazy"></a>
+        </div>
+    </section>
+</div>
+
+<!-- Summary -->
+<section class="summary center" id="summary">
+    <div>
+        <h1>Summary</h1>
+        <p><strong>Currencything.com</strong> is a colourful and fun Blockchain Explorer tracking my discord-based cryptocurrency <a href="/discord_bots/currencything">Currency Thing</a>. Features transaction data, key statistics and graphs, dynamic user pages, and a colourful and fun aesthetic!</p>
+        <a href="https://currencything.com/" target="_blank">What is this, some kinda currency thing? 🤡</a>
+    </div>
+</section>
+
+<!-- Creation Process -->
+<section class="creation center" id="creation">
+    <div>
+        <span class="full-text"><h1>Creation Process</h1></span>
+        <span class="short-text"><h1>Creation</h1></span>
+
+        <p><strong><a href="http://v2.currencything.com">Currencything.com</a></strong> is a blockchain explorer for <a href="/discord_bots/currencything">my discord cryptocurrency</a>. It displays the entire blockchain as a sortable table, as well as key Currency Thing statistics filterable by time period. Additionally, each user has their own currency thing page, displaying their own transactions and fun statistics. It also includes an <a href="https://currencything.com/api/blockchain">API endpoint</a>, which you can use to fetch all the data used on the website in raw JSON format.</p>
+        <p>This is actually a new version of currencything.com, rebuilt using the <a href="https://kit.svelte.dev/">SvelteKit</a> frontend framework, while the <a href="/websites/currencything.com">original version</a> was made in pure Flask using HTML templates. Flask is still used for the backend API, though that has also been improved and optimised.</p>
+        <p>The desire to rebuild the website was because I had been learning Svelte, and saw how lightning-fast and responsive it is, much more than Flask HTML templates. This is because it doesn't do a full-page refresh when changing pages, instead just re-rendering the UI, and many other optimisations. Another reason was for the interactivity. The original website used jQuery, which is by comparison outdated, very cumbersome, and not scaleable. Using a JS framework allows me to much more reliably add interactivity and state (like sorting the blockchain table by any field, playing responsive sound effects, or fetching new data from) while making it easy to add new features and pages due to its component-based architecture.</p>
+        <p>Another bonus of SvelteKit is that it can expose the backend API, so that anyone can make their own GET requests to fetch raw blockchain data, and then do whatever they want with it. Check out the <a href="https://github.com/SamTF/currencything.com-2.0/tree/main/flask-backend">backend README</a> for more info on the API and routes.</p>
+        <p>Overall, this feels like the definitive edition of currencything.com! It's so fast and responsive on the user side, and gives me a lot of room to grow the project and add new features on the code side.</p>
+        <a href="https://github.com/SamTF/currencything.com-2.0" target="_blank">Check a look at the source code</a>
+    </div>
+</section>
