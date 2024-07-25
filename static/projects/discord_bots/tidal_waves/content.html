@@ -1,0 +1,74 @@
+<!-- Image Showcase -->
+<div class="center">
+<section class="showcase">
+    <div class="slides-small">
+        <a href="/static/projects/discord_bots/tidal_waves/showcase/tidal_waves.gif"><img src="/static/projects/discord_bots/tidal_waves/showcase/tidal_waves.webp" alt="showing the bot in action" title="Showing the bot in action" loading="lazy"></a>
+        <a href="/static/projects/discord_bots/tidal_waves/showcase/0.png"><img src="/static/projects/discord_bots/tidal_waves/showcase/0.webp" alt="text output" title="Text report" loading="lazy"></a>
+        <a href="/static/projects/discord_bots/tidal_waves/showcase/1.png"><img src="/static/projects/discord_bots/tidal_waves/showcase/1.webp" alt="image output 1" title="Image report for current day" loading="lazy"></a>
+        <a href="/static/projects/discord_bots/tidal_waves/showcase/2.png"><img src="/static/projects/discord_bots/tidal_waves/showcase/2.webp" alt="image output 2" title="Image report for next day" loading="lazy"></a>
+    </div>
+</section>
+</div>
+
+<!-- Summary -->
+<section class="summary center" id="summary">
+    <div>
+        <h1>Summary</h1>
+        <p>Tidal Waves is a Discord bot that displays all the tidal information you need for a particular beach to know when the best time to go swimming or surfing is.</p>
+        <p>It shows: the time of the high and low tides, the height of the tides, current weather conditions, current time.</p>
+        <a href="https://discord.com/oauth2/authorize?client_id=457626744879448075&scope=bot&permissions=2147796992" target="_blank">Invite the bot 🏖️</a>
+    </div>
+</section>
+
+<!-- Creation Process -->
+<section class="creation center" id="creation">
+    <div class="creation-wrapper">
+        <span class="full-text"><h1>Creation Process</h1></span>
+        <span class="short-text"><h1>Creation</h1></span>
+        <p>I was finally back in Portugal 🇵🇹 for the summer after being in Germany for a long time, and one thing I was absolutely looking forward was going to the beach!</p>
+        <p>Trouble was, while some Portuguese beaches are perfect all day every day (like praia da Comporta), my local beach is <b>*heavily*</b> dependant on the tide. If you want to swim, you need to look out for the low tide or face huge waves and red flags. It was getting fairly tedious having to google every day when the low tide is, then being confronted with websites that display a sensory overload amount of information and confusing data tables. All I actually want is to know <i>when the high and low tides are to know when to go to the beach!</i></p>
+        <p>Thus, I created this bot out of neccessity. It displays only the minimal amount of information a beach-goer needs, without any unneccessary extras, in a clean and readable UI, available any time right on Discord! I had already made a similar bot that tells the weather <a href="/discord_bots/david_lynch">(David Lynch Weather Report)</a> so I followed the same UI philosophy I had created for it.</p>
+        <p>Like all my Discord bots, this was made using <a href="https://www.python.org/" target="_blank">Python</a> and <a href="https://pypi.org/project/discord.py/" target="_blank">discord-py</a>. The images are generated dynamically using <a href="https://pypi.org/project/pillow/" target="_blank"></a>Pillow. The data is currently being web scraped from <a href="https://wisuki.com/" target="_blank">wisuki</a>.</p>
+        <a href="https://github.com/SamTF/tidal_waves" target="_blank">Check out the source code</a>
+    </div>
+</section>
+
+<style>
+    /* New colour palette */
+    :root {
+        --1: #6b8b8a;
+        --2: #477a75;
+        --dark-green: #236c69;
+        --4: #154b69;
+        --dark-blue: #234072;
+        --colour-sand: #e1c8b2;
+    }
+
+    .creation h1 {
+        color: var(--dark-blue);
+    }
+
+    .creation-wrapper {
+        background-color: var(--colour-sand);
+        padding: 4rem 6rem;
+        border-radius: 4rem;
+        box-shadow: 0px 0px 44px 8px rgba(0,0,0,0.2);;
+    }
+
+    .creation {
+        background-color: var(--dark-blue);
+        background-image: url("/static/projects/discord_bots/tidal_waves/waves-01.png");
+        background-size: contain;
+    }
+
+    .creation p {
+        color: #333;
+    }
+    
+    b, i {
+        color: var(--dark-blue);
+    }
+    .creation p a {
+        color: var(--dark-green);
+    }
+</style>
