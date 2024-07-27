@@ -33,7 +33,7 @@
 
 <!-- Creation Process -->
 <section class="creation center" id="creation">
-    <div>
+    <div class="creation-wrapper">
         <span class="full-text"><h1>Creation Process</h1></span>
         <span class="short-text"><h1>Creation</h1></span>
 
@@ -64,6 +64,57 @@
         <p><strong>Grotto Builders!</strong> is a work in progress and being actively mantained by me, since it became a big part of this small community. User feedback and suggestions are taken into account and incorporated where possible. Stay tuned for new features and more updates!</p>
 
 
-        <a href="https://github.com/SamTF/grotto-beasts-deckbuilder" target="_blank">Check out the source code</a>
+        <a class="link-btn" href="https://github.com/SamTF/grotto-beasts-deckbuilder" target="_blank">Check out the source code</a>
     </div>
 </section>
+
+<style>
+    /* New colour palette */
+    :root {
+        --gb-colour-accent: #f6c955;
+        --gb-colour-light: #e2bd9d;
+        --gb-colour-mid-light: #d19562;
+        --gb-colour-dark: #370101;
+        --gb-colour-red: #de3852;
+        --gb-colour-blue-dark: #25609a;
+        --gb-colour-blue-light: #2bddf8;
+    }
+
+    .creation-wrapper {
+        background-color: var(--gb-colour-mid-light);
+        padding: 4rem 6rem;
+        border-radius: 4rem;
+        box-shadow: 0px 0px 44px 8px rgba(0,0,0,0.2);;
+    }
+
+    .creation {
+        background-color: var(--gb-colour-light);
+    }
+
+    .creation h1 {
+        color: var(--gb-colour-red);
+    }
+
+    .creation p a {
+        color: var(--gb-colour-blue-dark);
+    }
+
+    .creation .link-btn {
+        background-color: var(--gb-colour-accent);
+        color: var(--gb-colour-dark);
+    }
+
+    .summary {
+        background-color: var(--gb-colour-dark);
+        border-bottom: 1rem solid var(--gb-colour-accent);
+        filter: drop-shadow(0px 18px 5px rgba(0,0,0,0.25));
+    }
+
+    .summary h1 {
+        color: var(--gb-colour-accent);
+    }
+    
+    .summary a {
+        background-color: var(--gb-colour-blue-dark);
+    }
+</style>
