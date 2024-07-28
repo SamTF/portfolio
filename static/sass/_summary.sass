@@ -128,6 +128,15 @@
     a
         background-color: $accent-colour !important
 
-        
 
+// Styling the div that holds the Creation blog text
+.creation-wrapper
+    background-color: $text-colour
+    padding: 4rem 6rem
+    border-radius: 4rem
+
+    // Remove padding on mobile
+    @include screen-max(940px)
+        padding: 0 1.5rem 4rem 1.5rem !important
+        border-radius: 1rem !important
     
