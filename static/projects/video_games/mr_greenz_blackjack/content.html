@@ -1,0 +1,154 @@
+<!-- Video Showcase -->
+<section id="video mr-greenz-blackjack-video">
+    <div class="embed-container center">
+        <iframe src="https://www.youtube.com/embed/ywz9qiG4rdA?vq=hd1080&autoplay=1&modestbranding=1" width="940" height="528" title="Mr Greenz Blackjack Challenge 1.0 // Gameplay Showcase" frameborder="0" allowfullscreen></iframe>
+    </div>
+    </section>
+
+<!-- Summary -->
+<section class="summary center" id="summary">
+    <div>
+        <h1>Summary</h1>
+        <p><b>Mr Greenz Blackjack Challenge</b> is a leveled-up version of Blackjack played with original <a href="wiki.grottobeasts.net/" target="_blank"><i>Grotto Beasts!</i></a> Cards. Can be played with any existing deck or random assortment of <b><i>Grotto Beasts</i></b> cards.</p>
+        <br>
+        <p>Games are fast and exciting, but force you to rattle your brain and be strategic to make your way to grand finale!</p>
+        <a href="https://grotto.builders/blackjack" target="_blank">Play now! ♠️</a>
+    </div>
+</section>
+
+<!-- Creation Process -->
+<section class="creation center" id="creation">
+    <div class="creation-wrapper">
+        <span class="full-text"><h1>Creation Process</h1></span>
+        <span class="short-text"><h1>Creation</h1></span>
+
+        <h3>WHY?</h3>
+        <p>I kept hearing from other <b>Grotto Beasts</b> enjoyers and collectors that they had nobody to play with in real life and therefore nothing to do with their <b>Grotto Beasts</b> cards <span class="faded">(besides displaying or eating)</span>. Thus, I set out to design a singleplayer game using the existing GB cards without any modification whatsoever.</p>
+
+        <h3>HOW? / GAME DESIGN</h3>
+        <p>This was a very interesting and new game design challenge for me: <b><i>I had to design a totally new game using existing cards designed for a very specific game without any modifications.</i></b></p>
+        <p>I set myself the restriction of using the Grotto Beasts exactly as they are and having this game be playable in real life, so I had to keep the game simple and rely on what's already there. I wasn't going to make a solo "AI" to play Grotto Beasts, but instead a totally new game, so I pretty much discarded all the printed card effects, and therefore had to go with a <b>"numbers game"</b>: as numbers are all that's left on the card besides their text effect.</p>
+        <p>Given that gambling and casinos are a big sub-theme in the Grotto Beasts world, I had to go for a <b>casino inspired game</b>, so I chose <i>Blackjack</i> because:</p>
+        <ol>
+            <li>it's an extremely simple game with room for extra mechanics</li>
+            <li>it's Mr Greenz's iconic casino game of choice</li>
+        </ol>
+        <p>After playing around with various concepts and playtesting them myself with my cards, I came up with the gameplay system of <b>additive and multiplicative</b> score that's present in the final version <span class="faded">(refer to the video or help page to see it in action)</span>. In essence, it gives the game a lot of:</p>
+        <ul>
+            <li><b><i>strategy</i></b> - the cards you choose to play and even the order in which you play them matters</li>
+            <li><b><i>flexibility</i></b> - as the required scores can be achieved with tons of different combinations.</li>
+        </ul>
+
+        <p>After playtesting, this system seemed to be <b>perfectly playable</b> with all existing decks and even random combinations of cards, so I was very happy with the outcome.</p>
+
+        <h3>DIGITAL VERSION / IRONY</h3>
+        <p>Having a solid concept, I decided to share it with the Grotto Beasts community in the form of a game design document / manual. However, I realised that - while the game itself was pretty intuitive and fast - they found it hard to learn from the manual thus and was playing. So I figured I'd have to make a digital version on grotto.builders to onboard people into the game and show them how easy it is to play. I spent a few days designing the UI and giving it a lot of animations to feel alive and juicy <span class="faded">(inspired by Balatro)</span>.</p>
+        <p>Then after a couple of weeks I implemented the game using <b>JS, HTML, and CSS</b> so it could be perfectly playable in the browser natively and directly embedded into <a href="/websites/grotto.builders" target="_blank">grotto.builders</a>. One key addition in the digital version was a <i>score preview</i> on a per-card basis, so players could see exactly <b>how the scoring worked in real-time</b>, making it much easier to learn and make combos.</p>
+        <p>At this point, <b>people finally started playing the game</b>, with some even beating it much faster than I expected. People were enjoying it and I had fun working on it, so I kept adding more features to make it more interesting and replayable: such as adding <b>unique gameplay-altering effects to all Challengers</b>. By now, people were so comfortable with the digital version and its new features <span class="faded">(challenger effects and score previews)</span> that still nobody plays it in real life. Ironic! Oh well.</p>
+
+        <a class="link-btn" href="https://github.com/SamTF/grotto-beasts-deckbuilder/tree/master/web-app/src/routes/blackjack" target="_blank">Check out the source code</a>
+    </div>
+</section>
+
+<style>
+    /* New colour palette */
+    :root {
+        --gb-colour-accent: #f6c955;
+        --gb-colour-light: #e2bd9d;
+        --gb-colour-mid-light: #d19562;
+        --gb-colour-dark: #370101;
+        --gb-colour-red: #de3852;
+        --gb-colour-blue-dark: #25609a;
+        --gb-colour-blue-light: #2bddf8;
+    }
+
+    /* Text box */
+    .creation-wrapper {
+        background-color: var(--gb-colour-mid-light);
+        padding: 4rem 6rem;
+        border-radius: 4rem;
+        box-shadow: 0px 0px 44px 8px rgba(0,0,0,0.2);;
+    }
+
+    /* Main background */
+    .creation {
+        background-color: var(--gb-colour-light);
+    }
+
+    /* Main heading */
+    .creation h1 {
+        color: var(--gb-colour-red);
+    }
+
+    /* List items */
+    .creation ol, .creation ul {
+        margin-top: -1rem;
+    }
+    .creation li {
+        color: #333;
+    }
+
+    /* Bold text */
+    .creation b {
+        color: var(--gb-colour-accent);
+    }
+
+    /* Body text */
+    .creation p {
+        color: #333;
+    }
+
+    /* Hyperlinks in body text */
+    .creation p a {
+        color: var(--gb-colour-blue-dark);
+    }
+
+    /* Link buttons */
+    .creation .link-btn {
+        background-color: var(--gb-colour-accent);
+        color: var(--gb-colour-dark);
+    }
+
+    /* Summary section */
+    .summary {
+        background-color: var(--gb-colour-dark);
+        border-bottom: 1rem solid var(--gb-colour-accent);
+        filter: drop-shadow(0px 18px 5px rgba(0,0,0,0.25));
+    }
+
+    /* Summary heading */
+    .summary h1 {
+        color: var(--gb-colour-accent);
+    }
+    
+    /* Summary link button */
+    .summary a {
+        background-color: var(--gb-colour-blue-dark);
+    }
+
+    /* Faded extra text in brackets */
+    .faded {
+        opacity: 0.5;
+        color: var(--off-white);
+    }
+
+    /* Add a divider line between the banner and the page body */
+    .banner {
+        border-bottom: 1rem solid var(--gb-colour-accent);
+    }
+
+    /* Background colour for the video */
+    body {
+        background-color: var(--gb-colour-mid-light);
+    }
+
+    /* Style the video iframe */
+    .embed-container {
+        filter: drop-shadow(2rem 2rem 5px rgba(0,0,0,0.5));
+    }
+    .embed-container iframe {
+        border-radius: 1.5rem;
+        border: 4px solid white;
+    }
+
+</style>
