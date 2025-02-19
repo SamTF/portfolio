@@ -13,7 +13,7 @@ PROJECTS = projects.Projects()
 HOME = {
     'title'         : "Things I've Made",
     'footer'        : 'Sebastião Casaleiro',
-    'creation_date' : '2023',
+    'creation_date' : '2025',
     'description'   : "A showcase of projects I've made across various fields.",
     'thumb'         : "/static/images/website_thumbnail.webp"
 }
@@ -21,7 +21,7 @@ HOME = {
 ABOUT = {
     'title'         : 'About Me :)',
     'footer'        : 'Sebastião Casaleiro',
-    'creation_date' : '2023',
+    'creation_date' : '2025',
     'description'   : 'A short bio of who I am and what I like to do :)',
     'thumb'         : '/static/images/website_thumbnail.webp'
 }
@@ -70,7 +70,7 @@ def project_page(category, project):
 @app.route('/cv')
 @app.route('/resume')
 def cv():
-    return send_from_directory('static', 'CV_2024_games.pdf')
+    return send_from_directory('static', 'CV_2025_games.pdf')
 
 ### CV for Programming
 @app.route('/CV/programming')
