@@ -25,8 +25,28 @@
     img
         max-height: 50vh
     
+    .links 
+        display: flex
+        flex-wrap: wrap
+        gap: 1rem
+        margin-bottom: 2rem
+        
     
+        .social-link-btn
+            display: inline-flex
+            justify-content: center
+            align-items: center
 
+            img
+                max-height: 2.5rem
+                max-height: 2.5rem
+            
+            &.itchio
+                background-color: #fa5c5c
+            &.linkedin
+                background-color: #0077b5
+
+    
     // Changing the layout for mobile: 1 column stacked, with the portrait at the top and the bio below
     @include screen-max(1280px)
         grid-template-columns: 1fr
