@@ -69,6 +69,7 @@ def project_page(category, project):
 @app.route('/CV')
 @app.route('/cv')
 @app.route('/resume')
+@app.route('/cv/games')
 def cv():
     return send_from_directory('static', 'CV_2025_games.pdf')
 
@@ -77,7 +78,7 @@ def cv():
 @app.route('/cv/programming')
 @app.route('/resume/programming')
 def cv_programming():
-    return send_from_directory('static', 'CV_2024_programming.pdf')
+    return send_from_directory('static', 'CV_2025_programming.pdf')
 
 ### BA Thesis Direct Link
 @app.route('/thesis')
